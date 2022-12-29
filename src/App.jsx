@@ -11,10 +11,11 @@ import PrivacyPolicy from "./pages/policies/PrivacyPolicy";
 import TermsOfService from "./pages/policies/TermsOfService";
 
 function App() {
-  const [value, setValue] = useState("");
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [value, setValue] = useState("");
+  // const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
+  
 
   return (
     <div className="App">
