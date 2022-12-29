@@ -1,23 +1,36 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import SearchNav from "./components/SearchNav";
-import VerticalNav from "./components/VerticalNav";
+import Nav from "./components/Nav";
+import InitialAuth from "./pages/auth/InitialAuth";
+import SignIn from "./pages/auth/SignIn";
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
+import CookiesPolicy from "./pages/policies/CookiesPolicy";
+import PrivacyPolicy from "./pages/policies/PrivacyPolicy";
+import TermsOfService from "./pages/policies/TermsOfService";
 
 function App() {
   const [value, setValue] = useState("");
   const [error, setError] = useState(null);
-
+  const [loading, setLoading] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
 
   return (
     <div className="App">
-      {/* Navbar displayed on left side of page */}
-      <div className="flex">
-        <VerticalNav />
-        <div className="w-full bg-gray-800 h-20 lg:border-b border-gray-700 flex items-center">
-          <SearchNav value={value} setValue={setValue} />
-        </div>
-      </div>
-      {/* secondary nav bar with search input + task board filter + sign in/out buttons */}
+        <Nav isAuth={isAuth} />
+
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/sign-in" element={<SignIn />} />
+        <Route exact path="/welcome" element={<InitialAuth />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+
+        {/* Policies & Terms routes */}
+        <Route exact path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route exact path="/terms-of-service" element={<TermsOfService />} />
+      </Routes>
 
       {/* dashboard style layouts with different editing, adding, deleting, sorting logic */}
     </div>
