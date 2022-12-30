@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
+import Playground from "./components/Playground";
 import InitialAuth from "./pages/auth/InitialAuth";
 import SignIn from "./pages/auth/SignIn";
 import Components from "./pages/Components";
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/sign-in" element={<SignIn />} />
         <Route exact path="/welcome" element={<InitialAuth />} />
         <Route exact path="/components" element={<Components />} />
+        <Route exact path="/playground" element={<Playground />} />
 
         {/* Policies & Terms routes */}
         <Route exact path="/cookies-policy" element={<CookiesPolicy />} />

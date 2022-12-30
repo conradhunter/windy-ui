@@ -29,7 +29,7 @@ function Nav({ isAuth }) {
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
-                to="/components"
+                to="/playground"
               >
                 Components
               </Link>
