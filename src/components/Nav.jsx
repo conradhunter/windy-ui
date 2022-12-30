@@ -1,32 +1,37 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/Task.png";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 function Nav({ isAuth }) {
   const location = useLocation();
 
+  const signOut = () => {
+    
+  }
+
   return (
     <>
       {location.pathname !== "/sign-in" && location.pathname !== "/welcome" && (
-        <nav className="flex items-center justify-evenly w-full bg-gray-800 h-20">
+        <nav className="flex items-center justify-evenly w-full bg-gray-800 h-20 navbar">
           <Link to="/">
-            <img src={logo} alt="" className="h-10" />
+            <h2 className="text-white text-lg">WindyUI</h2>
           </Link>
           <ul className="flex mr-12 text-white">
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
-                to="/dashboard"
+                to="/components"
               >
-                Dashboard
+                Components
               </Link>
             </li>
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
-                to="/"
+                to="/components"
               >
-                Features
+                Components
               </Link>
             </li>
             <li>
@@ -51,13 +56,25 @@ function Nav({ isAuth }) {
               className="block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2"
               to="/sign-in"
             >
-              {!isAuth ? <span>Sign in</span> : <span>Log out</span>}
+              {!isAuth ? <span>Sign in</span> : <span onClick={signOut}>Log out</span>}
             </Link>
             <Link
-              className="block py-3 px-5 text-center font-medium leading-6 text-md text-white bg-indigo-500 hover:bg-indigo-700 border-3 border-indigo-900 shadow rounded transition duration-200"
+              className="block py-3 px-5 mr-6 text-center font-medium leading-6 text-md text-white bg-indigo-500 hover:bg-indigo-700 border-3 border-indigo-900 shadow rounded transition duration-200"
               to="/"
             >
               Contact Us
+            </Link>
+            <Link
+              to="/"
+              className="h-7 w-7 mr-2 text-white hover:bg-gray-700 rounded duration-200 flex items-center justify-center py-5 px-5"
+            >
+              <GitHubIcon />
+            </Link>
+            <Link
+              to="/"
+              className="h-7 w-7 text-white hover:bg-gray-700 rounded duration-200 flex items-center justify-center py-5 px-5"
+            >
+              <TwitterIcon />
             </Link>
           </div>
           <div className="lg:hidden py-6 px-6 bg-gray-800">

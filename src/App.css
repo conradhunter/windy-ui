@@ -8,8 +8,14 @@ html {
   box-sizing: border-box;
 }
 
-#slant {
-  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
-
+.App {
+  padding-top: 5rem;
+}

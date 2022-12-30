@@ -4,7 +4,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import InitialAuth from "./pages/auth/InitialAuth";
 import SignIn from "./pages/auth/SignIn";
-import Dashboard from "./pages/Dashboard";
+import Components from "./pages/Components";
 import Home from "./pages/Home";
 import CookiesPolicy from "./pages/policies/CookiesPolicy";
 import PrivacyPolicy from "./pages/policies/PrivacyPolicy";
@@ -15,7 +15,7 @@ function App() {
   // const [error, setError] = useState(null);
   // const [loading, setLoading] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
-  
+
 
   return (
     <div className="App">
@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/sign-in" element={<SignIn />} />
         <Route exact path="/welcome" element={<InitialAuth />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/components" element={<Components />} />
 
         {/* Policies & Terms routes */}
         <Route exact path="/cookies-policy" element={<CookiesPolicy />} />
