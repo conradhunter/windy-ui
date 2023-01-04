@@ -19,3 +19,7 @@ html {
 .App {
   padding-top: 5rem;
 }
+
+#home-page {
+  background-image: url('./assets/pattern.svg');
+}

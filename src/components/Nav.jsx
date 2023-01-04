@@ -2,22 +2,32 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../backend/FirebaseConfig";
+import { signOut } from "firebase/auth";
 
-function Nav({ isAuth }) {
+function Nav({ isAuth, setIsAuth }) {
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const signOut = () => {
-    
+  async function handleSignOut() {
+    await signUserOut(auth);
+    setIsAuth(false);
+    navigate("/");
+  }
+
+  function signUserOut() {
+    return signOut(auth);
   }
 
   return (
     <>
       {location.pathname !== "/sign-in" && location.pathname !== "/welcome" && (
-        <nav className="flex items-center justify-evenly w-full bg-gray-800 h-20 navbar">
-          <Link to="/">
+        <nav className="flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between px-10">
+          <Link to="/" className="py-6 px-6">
             <h2 className="text-white text-lg">WindyUI</h2>
           </Link>
-          <ul className="flex mr-12 text-white">
+          <ul className="lg:flex mr-12 text-white sm:hidden md:hidden">
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
@@ -31,7 +41,7 @@ function Nav({ isAuth }) {
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
                 to="/playground"
               >
-                Components
+                Playground
               </Link>
             </li>
             <li>
@@ -39,7 +49,15 @@ function Nav({ isAuth }) {
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
                 to="/"
               >
-                Pricing
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
+                to="/"
+              >
+                Docs
               </Link>
             </li>
             <li>
@@ -47,20 +65,24 @@ function Nav({ isAuth }) {
                 className="text-md py-3 px-5 hover:bg-gray-700 rounded duration-200"
                 to="/"
               >
-                Docs
+                Blog
               </Link>
             </li>
           </ul>
-          <div className="flex items-center">
+          <div className="lg:flex items-center md:hidden sm:hidden">
             <Link
               className="block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2"
               to="/sign-in"
             >
-              {!isAuth ? <span>Sign in</span> : <span onClick={signOut}>Log out</span>}
+              {!isAuth ? (
+                <span>Sign in</span>
+              ) : (
+                <span onClick={handleSignOut}>Log out</span>
+              )}
             </Link>
             <Link
               className="block py-3 px-5 mr-6 text-center font-medium leading-6 text-md text-white bg-indigo-500 hover:bg-indigo-700 border-3 border-indigo-900 shadow rounded transition duration-200"
-              to="/"
+              to="/contact"
             >
               Contact Us
             </Link>
