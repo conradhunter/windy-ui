@@ -13,9 +13,12 @@ import CloseIcon from "@mui/icons-material/Close";
 function SignIn({ setIsAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   async function handleSignIn() {
     signIn(auth, email, password);
+    setIsAuth(true);
+    navigate("/");
   }
 
   async function signIn() {
@@ -23,11 +26,9 @@ function SignIn({ setIsAuth }) {
   }
 
   const provider = new GoogleAuthProvider();
-  const navigate = useNavigate();
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
       console.log(result);

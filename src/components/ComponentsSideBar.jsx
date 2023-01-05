@@ -46,8 +46,8 @@ function ComponentsSideBar() {
       let replacedComponents = component
         .split(" ")
         .join("")
-        .toLocaleLowerCase();
-      console.log(replacedComponents);
+        .toLocaleLowerCase()
+        .replace('/', '-')
     });
     pageComponents.map((component) => {
       let replacedPageComponents = component
@@ -71,7 +71,7 @@ function ComponentsSideBar() {
         <ul className="text-sm leading-loose">
           {components.sort().map((component, index) => {
             return (
-              <Link key={index} to="/">
+              <Link key={index} to={`/components/${component}`}>
                 <li className="hover:bg-gray-700 rounded py-1 pr-1 duration-200 pl-3 mb-2">
                   {component}
                 </li>
@@ -88,7 +88,7 @@ function ComponentsSideBar() {
         <ul className="text-sm leading-loose">
           {pageComponents.sort().map((pageComponent, index) => {
             return (
-              <Link key={index} to={`/${pageComponent}`}>
+              <Link key={index} to={`/components/${pageComponent}`}>
                 <li className="hover:bg-gray-700 rounded py-1 pr-1 duration-200 pl-3 mb-2">
                   {pageComponent}
                 </li>

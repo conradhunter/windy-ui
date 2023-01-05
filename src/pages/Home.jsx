@@ -21,7 +21,6 @@ function Home() {
             Read the docs
           </button>
         </Link>
-        {/* wave svg background */}
       </div>
       <div className="h-screen bg-slate-400">
         {/* Pricing */}

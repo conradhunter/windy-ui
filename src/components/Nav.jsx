@@ -27,7 +27,7 @@ function Nav({ isAuth, setIsAuth }) {
           <Link to="/" className="py-6 px-6">
             <h2 className="text-white text-lg">WindyUI</h2>
           </Link>
-          <ul className="lg:flex mr-12 text-white sm:hidden md:hidden">
+          <ul className="lg:hidden xl:flex mr-12 text-white sm:hidden md:hidden min-[100px]:hidden">
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
@@ -68,8 +68,16 @@ function Nav({ isAuth, setIsAuth }) {
                 Blog
               </Link>
             </li>
+            <li>
+              <Link
+                className="text-md py-3 px-5 hover:bg-gray-700 rounded duration-200"
+                to="/"
+              >
+                Change Log
+              </Link>
+            </li>
           </ul>
-          <div className="lg:flex items-center md:hidden sm:hidden">
+          <div className="lg:hidden xl:flex items-center md:hidden sm:hidden min-[100px]:hidden">
             <Link
               className="block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2"
               to="/sign-in"
@@ -99,7 +107,7 @@ function Nav({ isAuth, setIsAuth }) {
               <TwitterIcon />
             </Link>
           </div>
-          <div className="lg:hidden py-6 px-6 bg-gray-800">
+          <div className="lg:block xl:hidden py-6 px-6 bg-gray-800">
             <div className="flex items-center justify-between">
               <button className="navbar-burger flex items-center rounded focus:outline-none">
                 <svg
@@ -113,6 +121,10 @@ function Nav({ isAuth, setIsAuth }) {
                 </svg>
               </button>
             </div>
+          </div>
+
+          <div id="navHamburger__modal" className="hidden">
+            
           </div>
         </nav>
       )}

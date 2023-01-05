@@ -1,12 +1,12 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../backend/FirebaseConfig";
-import CloseIcon from "@mui/icons-material/Close";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../backend/FirebaseConfig';
+import CloseIcon from '@mui/icons-material/Close';
 
 function InitialAuth({ setIsAuth, isAuth }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [agreePolicy, setAgreePolicy] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +17,8 @@ function InitialAuth({ setIsAuth, isAuth }) {
   async function handleSignUp(event) {
     event.preventDefault();
     signUp(auth, email, password);
-    navigate("/");
+    setIsAuth(true);
+    navigate('/');
   }
 
   // if (agreePolicy) {
@@ -62,21 +63,21 @@ function InitialAuth({ setIsAuth, isAuth }) {
                 onChange={(e) => setAgreePolicy(e.target.checked)}
               />
               <span className="text-sm text-gray-500">
-                By signing up, you agree to our{" "}
+                By signing up, you agree to our{' '}
                 <Link
                   className="font-bold hover:underline"
                   to="/terms-of-service"
                 >
                   Terms of Service
                 </Link>
-                ,{" "}
+                ,{' '}
                 <Link
                   className="font-bold hover:underline"
                   to="/privacy-policy"
                 >
                   Privacy Policy
-                </Link>{" "}
-                and{" "}
+                </Link>{' '}
+                and{' '}
                 <Link
                   className="font-bold hover:underline"
                   to="/cookies-policy"

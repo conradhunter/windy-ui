@@ -12,6 +12,7 @@ import CookiesPolicy from './pages/policies/CookiesPolicy';
 import PrivacyPolicy from './pages/policies/PrivacyPolicy';
 import TermsOfService from './pages/policies/TermsOfService';
 import Contact from './pages/Contact';
+import Error from './pages/errors/Error';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -23,23 +24,24 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route
-          exact
+        
           path="/sign-in"
           element={<SignIn setIsAuth={setIsAuth} />}
         />
         <Route
-          exact
+        
           path="/welcome"
           element={<InitialAuth setIsAuth={setIsAuth} />}
         />
-        <Route exact path="/components" element={<Components setValue={setValue} />} />
-        <Route exact path="/playground" element={<Playground />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route path="/components" element={<Components setValue={setValue} value={value} />} />
+        <Route path="/playground" element={<Playground />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/error" element={<Error />} />
 
         {/* Policies & Terms routes */}
-        <Route exact path="/cookies-policy" element={<CookiesPolicy />} />
-        <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route exact path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
 
       {/* <Footer /> */}

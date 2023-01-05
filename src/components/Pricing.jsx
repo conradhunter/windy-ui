@@ -1,11 +1,11 @@
-import React from "react";
-import stripe from "../assets/logos/stripe.svg";
-import amex from "../assets/logos/amex.svg";
-import mastercard from "../assets/logos/mastercard.svg";
-import paypal from "../assets/logos/paypal.svg";
-import visa from "../assets/logos/visa.svg";
-import applePay from "../assets/logos/apple-pay.svg";
-import { Link } from "react-router-dom";
+import React from 'react';
+import stripe from '../assets/logos/stripe.svg';
+import amex from '../assets/logos/amex.svg';
+import mastercard from '../assets/logos/mastercard.svg';
+import paypal from '../assets/logos/paypal.svg';
+import visa from '../assets/logos/visa.svg';
+import applePay from '../assets/logos/apple-pay.svg';
+import { Link } from 'react-router-dom';
 
 function Pricing() {
   return (
@@ -51,10 +51,10 @@ function Pricing() {
                     Business
                   </span>
                   <h3 className="mb-1 text-4xl text-gray-900 font-bold leading-none">
-                    $49/mo
+                    $250
                   </h3>
                   <p className="mb-6 text-sm text-gray-600 font-medium leading-relaxed">
-                    Billed Annually
+                    One Time Payment
                   </p>
                   <p className="mb-9 text-gray-600 font-medium leading-relaxed list-disc">
                     Access to all WindyUI components for your business (up to 5
@@ -77,10 +77,10 @@ function Pricing() {
                     Enterprise
                   </span>
                   <h3 className="mb-1 text-4xl text-gray-900 font-bold leading-none">
-                    $119/mo
+                    $650
                   </h3>
                   <p className="mb-6 text-sm text-gray-600 font-medium leading-relaxed">
-                    Billed Annually
+                    One Time Payment
                   </p>
                   <p className="mb-9 text-gray-600 font-medium leading-relaxed list-disc">
                     Access to all WindyUI components for your team (up to 20

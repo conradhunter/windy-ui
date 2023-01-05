@@ -3,7 +3,7 @@ import ComponentsSideBar from '../components/ComponentsSideBar';
 import { useLocation } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 
-function Components({ setValue }) {
+function Components({ setValue, value }) {
   const location = useLocation();
 
   if (location.pathname === '/components') {
@@ -20,19 +20,22 @@ function Components({ setValue }) {
       <ComponentsSideBar />
       <div
         id="searchInput"
-        className="w-10/12 bg-gray-800 right-0 absolute h-20 flex items-center justify-center"
+        className="w-10/12 bg-gray-800 right-0 absolute h-16 flex items-center justify-center border-t-2 border-t-gray-700"
       >
-        <div className="bg-white flex rounded-full px-8">
+        <div className="bg-white flex rounded-full px-6">
           <input
             type="text"
             placeholder="Search components"
-            className="w-72 py-2 pl-3 my-2 bg-white rounded-lg"
+            className="w-72 pl-2 my-2 bg-white rounded-lg outline-none"
             onChange={(e) => setValue(e.target.value)}
           />
           <button onClick={handleSearch}>
             <SearchIcon className="" />
           </button>
         </div>
+      </div>
+      <div>
+        {/* On initial page mount, render a gallery/grid display off all components that the user can scroll through */}
       </div>
     </div>
   );
