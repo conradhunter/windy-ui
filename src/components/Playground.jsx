@@ -1,4 +1,5 @@
 import React from 'react';
+import ComponentsGridItem from './ComponentsGridItem';
 
 function Playground() {
   return (
@@ -8,6 +9,7 @@ function Playground() {
       <div className="flex h-screen">
         <div className=''>
           {/* test components here */}
+          <ComponentsGridItem />
         </div>
       </div>
     </div>

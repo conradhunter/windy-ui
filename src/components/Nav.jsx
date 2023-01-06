@@ -1,7 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../backend/FirebaseConfig";
 import { signOut } from "firebase/auth";
@@ -23,11 +21,11 @@ function Nav({ isAuth, setIsAuth }) {
   return (
     <>
       {location.pathname !== "/sign-in" && location.pathname !== "/welcome" && (
-        <nav className="flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between px-10">
+        <nav className="flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between min-[100px]:justify-between px-10">
           <Link to="/" className="py-6 px-6">
             <h2 className="text-white text-lg">WindyUI</h2>
           </Link>
-          <ul className="lg:hidden xl:flex mr-12 text-white sm:hidden md:hidden min-[100px]:hidden">
+          <ul className="lg:flex xl:flex mr-12 text-white sm:hidden md:hidden min-[100px]:hidden">
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
@@ -47,17 +45,9 @@ function Nav({ isAuth, setIsAuth }) {
             <li>
               <Link
                 className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
-                to="/"
+                to="/faq"
               >
                 FAQ
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-md mr-2 2xl:mr-16 py-3 px-5 hover:bg-gray-700 rounded duration-200"
-                to="/"
-              >
-                Docs
               </Link>
             </li>
             <li>
@@ -71,7 +61,7 @@ function Nav({ isAuth, setIsAuth }) {
             <li>
               <Link
                 className="text-md py-3 px-5 hover:bg-gray-700 rounded duration-200"
-                to="/"
+                to="/change-log"
               >
                 Change Log
               </Link>
@@ -93,18 +83,6 @@ function Nav({ isAuth, setIsAuth }) {
               to="/contact"
             >
               Contact Us
-            </Link>
-            <Link
-              to="/"
-              className="h-7 w-7 mr-2 text-white hover:bg-gray-700 rounded duration-200 flex items-center justify-center py-5 px-5"
-            >
-              <GitHubIcon />
-            </Link>
-            <Link
-              to="/"
-              className="h-7 w-7 text-white hover:bg-gray-700 rounded duration-200 flex items-center justify-center py-5 px-5"
-            >
-              <TwitterIcon />
             </Link>
           </div>
           <div className="lg:block xl:hidden py-6 px-6 bg-gray-800">

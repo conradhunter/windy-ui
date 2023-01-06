@@ -36,7 +36,7 @@ function SignIn({ setIsAuth }) {
   };
 
   return (
-    <section className="flex items-center justify-center h-[calc(100vh-5rem)]">
+    <section className="flex items-center justify-center min-h-[calc(100vh-5rem)]">
       <Link to="/" className="absolute top-8 left-8">
         {/* change to back button => navigate(-1)
         https://www.datainfinities.com/36/create-a-back-button-with-react-router#:~:text=To%20create%20a%20back%20button,function%20of%20the%20back%20button. */}

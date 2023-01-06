@@ -28,7 +28,7 @@ function InitialAuth({ setIsAuth, isAuth }) {
   // }
 
   return (
-    <section className="flex items-center justify-center h-[calc(100vh-5rem)]">
+    <section className="flex items-center justify-center min-h-[calc(100vh-5rem)]">
       <Link to="/" className="absolute top-8 left-8">
         <CloseIcon />
       </Link>

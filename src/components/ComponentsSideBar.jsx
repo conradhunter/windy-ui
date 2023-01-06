@@ -1,45 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { components, pageComponents } from "../data/componentCategories";
 
 function ComponentsSideBar() {
-  const components = [
-    "Alert",
-    "Card",
-    "Checkbox",
-    "File Input",
-    "Range",
-    "Rating",
-    "Select",
-    "FAQ",
-    "Dropdown",
-    "Accordion",
-    "Text Input",
-    "Input Groups",
-    "Text Area",
-    "Toggle",
-    "Navigation",
-    "Footer",
-    "Hero",
-    "Breadcrumbs",
-    "Pagination",
-    "Avatar",
-    "Forms",
-    "Sign-in/Sign-up",
-    "Contact form",
-    "Modal",
-    "Skeleton",
-    "Button",
-    "Code",
-    "Steps",
-  ];
-
-  const pageComponents = [
-    "Landing Page",
-    "Home Screen",
-    "Settings Screen",
-    "Dashboard",
-    "E-commerce Screens",
-  ];
 
   function removeSpaces() {
     components.map((component) => {

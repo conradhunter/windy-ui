@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Playground from './components/Playground';
 import InitialAuth from './pages/auth/InitialAuth';
@@ -13,35 +12,41 @@ import PrivacyPolicy from './pages/policies/PrivacyPolicy';
 import TermsOfService from './pages/policies/TermsOfService';
 import Contact from './pages/Contact';
 import Error from './pages/errors/Error';
+import FAQ from './pages/FAQ';
+import Footer from './components/Footer';
+import ChangeLog from './pages/ChangeLog';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
-  const [value, setValue] = useState('');
+  const [isBusinessPlan, setBusinessPlan] = useState(false);
+  const [isEnterprisePlan, setEnterprisePlan] = useState(false);
+
+  // Animate on scroll library
 
   return (
-    <div className="App">
+    <div className='App'>
       <Nav isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path='/' element={<Home />} />
+        <Route path='/sign-in' element={<SignIn setIsAuth={setIsAuth} />} />
         <Route
-        
-          path="/sign-in"
-          element={<SignIn setIsAuth={setIsAuth} />}
-        />
-        <Route
-        
-          path="/welcome"
+          path='/welcome'
           element={<InitialAuth setIsAuth={setIsAuth} />}
         />
-        <Route path="/components" element={<Components setValue={setValue} value={value} />} />
-        <Route path="/playground" element={<Playground />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/error" element={<Error />} />
+        <Route
+          path='/components'
+          element={<Components />}
+        />
+        <Route path='/playground' element={<Playground />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/error' element={<Error />} />
+        <Route path='/faq' element={<FAQ />} />
+        <Route path='/change-log' element={<ChangeLog />} />
 
         {/* Policies & Terms routes */}
-        <Route path="/cookies-policy" element={<CookiesPolicy />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path='/cookies-policy' element={<CookiesPolicy />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/terms-of-service' element={<TermsOfService />} />
       </Routes>
 
       {/* <Footer /> */}

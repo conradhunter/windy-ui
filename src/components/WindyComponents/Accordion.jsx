@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Accordion() {
   const [isOpen, setIsOpen] = useState(true);
 
-  // Add functionality to
+  // Add functionality like FAQ page, supply the No JS version and the version with JS
 
   return (
     <div className='flex flex-col justify-center items-center mx-auto max-w-7xl'>
