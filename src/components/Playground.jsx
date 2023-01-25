@@ -2,7 +2,6 @@ import React from 'react';
 import MockUpCode from './MockUpCode';
 import Pagination from './WindyComponents/Pagination';
 import Skeleton from './WindyComponents/Skeleton';
-import Toggle from './WindyComponents/Toggle';
 
 function Playground() {
   return (
@@ -15,7 +14,6 @@ function Playground() {
           {/* <MockUpCode /> */}
           {/* <Skeleton height={'h-72'} width={'w-72'} /> */}
           {/* <Pagination /> */}
-          <Toggle />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function MockUpCode() {
+function MockUpCode({ preview, jsx, html }) {
   const [activeTab, setActiveTab] = useState('tabOne');
 
   function toggleTabOne() {
@@ -16,7 +16,7 @@ function MockUpCode() {
   }
 
   return (
-    <div>
+    <div className='w-2/3'>
       <ul className='flex gap'>
         <li
           className={`py-1 px-3 ${
@@ -47,14 +47,12 @@ function MockUpCode() {
         </li>
       </ul>
       <div className='w-7/12 h-96 bg-slate-800 rounded-b-md rounded-tr-md p-2 text-white text-xs flex items-center overflow-x-scroll'>
-        {activeTab === 'tabOne' && (
-          <h1 className='text-white text-3xl'>Preview</h1>
-        )}
+        {activeTab === 'tabOne' && preview}
         {activeTab === 'tabTwo' && (
-          <h1 className='text-white text-3xl'>HTML</h1>
+          <p className='text-white text-base'>{html}</p>
         )}
         {activeTab === 'tabThree' && (
-          <h1 className='text-white text-3xl'>JSX</h1>
+          <p className='text-white text-base'>{jsx}</p>
         )}
       </div>
     </div>

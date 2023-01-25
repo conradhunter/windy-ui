@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 
 function InitialAuth({ setIsAuth }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [agreePolicy, setAgreePolicy] = useState(false);
-
-  // if (agreePolicy) {
-  //   signup();
-  // } else {
-  //   console.error('You must agree to the policy before signing up.');
-  // }
 
   return (
     <section className='flex items-center justify-center min-h-[calc(100vh-5rem)]'>

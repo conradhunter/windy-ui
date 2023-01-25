@@ -20,8 +20,6 @@ import Component from './components/Component';
 function App() {
   const [isAuth, setIsAuth] = useState(false);
 
-  const names = ['utilityUI', 'windytailUI', 'windy component library'];
-
   return (
     <div className='App'>
       <Nav isAuth={isAuth} setIsAuth={setIsAuth} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-function Nav({ isAuth, setIsAuth }) {
+function Nav({ isAuth }) {
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -27,7 +27,7 @@ function Nav({ isAuth, setIsAuth }) {
       {location.pathname !== '/sign-in' && location.pathname !== '/welcome' && (
         <nav className='flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between min-[100px]:justify-between px-10'>
           <Link to='/' className='py-6 px-6'>
-            <h2 className='text-white text-lg'>WindyUI</h2>
+            <h2 className='text-white text-lg'>WindiKit</h2>
           </Link>
           <ul className='lg:flex xl:flex mr-12 text-white sm:hidden md:hidden min-[100px]:hidden'>
             <li>
@@ -77,6 +77,7 @@ function Nav({ isAuth, setIsAuth }) {
               to='/sign-in'
             >
               {!isAuth ? <span>Sign in</span> : <span>Log out</span>}
+              {/*  // TODO check cookies if user was prev signed in, if so show signIn otherwise signUp   */}
             </Link>
             <Link
               className='block py-3 px-5 mr-6 text-center font-medium leading-6 text-md text-white bg-indigo-500 hover:bg-indigo-700 border-3 border-indigo-900 shadow rounded transition duration-200'

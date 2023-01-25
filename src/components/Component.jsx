@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Accordion from '../components/WindyComponents/Accordion';
-import Button from '../components/WindyComponents/Button';
+import MockUpCode from './MockUpCode';
+import ButtonOne from './WindyComponents/Buttons/ButtonOne';
 import Tabs from './WindyComponents/Tabs';
 import Toggle from './WindyComponents/Toggle';
 
@@ -24,7 +25,19 @@ function Component() {
       {location.pathname === '/components/Button' && (
         <>
           <h1 className='text-2xl text-indigo-500 font-medium'>Button</h1>
-          <Button />
+          <MockUpCode
+            preview={<ButtonOne />}
+            jsx={`
+              <button className='bg-indigo-600 hover:bg-indigo-700 duration-200 px-8 uppercase w-56 py-3 inline-block rounded-xl text-white text-lg'>
+                Button
+              </button>
+            `}
+            html={`
+            <button class='bg-indigo-600 hover:bg-indigo-700 duration-200 px-8 uppercase w-56 py-3 inline-block rounded-xl text-white text-lg'>
+            Button
+          </button>
+            `}
+          />
         </>
       )}
       {location.pathname === '/components/Toggle' && (
