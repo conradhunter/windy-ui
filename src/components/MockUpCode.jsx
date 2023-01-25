@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Tabs() {
+function MockUpCode() {
   const [activeTab, setActiveTab] = useState('tabOne');
 
   function toggleTabOne() {
@@ -19,52 +19,46 @@ function Tabs() {
     <div>
       <ul className='flex gap'>
         <li
-          className={`py-1 px-2 ${
+          className={`py-1 px-3 ${
             activeTab === 'tabOne'
               ? 'bg-slate-800 text-white rounded-t-md'
               : null
           }`}
         >
-          <button onClick={toggleTabOne}>Tab One</button>
+          <button onClick={toggleTabOne}>Preview</button>
         </li>
         <li
-          className={`py-1 px-2 ${
+          className={`py-1 px-3 ${
             activeTab === 'tabTwo'
               ? 'bg-slate-800 text-white rounded-t-md'
               : null
           }`}
         >
-          <button onClick={toggleTabTwo}>Tab Two</button>
+          <button onClick={toggleTabTwo}>HTML</button>
         </li>
         <li
-          className={`py-1 px-2 ${
+          className={`py-1 px-3 ${
             activeTab === 'tabThree'
               ? 'bg-slate-800 text-white rounded-t-md'
               : null
           }`}
         >
-          <button onClick={toggleTabThree}>Tab Three</button>
+          <button onClick={toggleTabThree}>JSX</button>
         </li>
       </ul>
-      <div className='w-7/12 h-96 bg-slate-800 rounded-b-md rounded-tr-md p-6 text-sm flex items-center justify-center'>
+      <div className='w-7/12 h-96 bg-slate-800 rounded-b-md rounded-tr-md p-2 text-white text-xs flex items-center overflow-x-scroll'>
         {activeTab === 'tabOne' && (
-          <div id='preview-tab' className='mx-auto'>
-            <h1 className='text-white text-3xl'>Tab One Content</h1>
-          </div>
+          <h1 className='text-white text-3xl'>Preview</h1>
         )}
         {activeTab === 'tabTwo' && (
-          <div id='html-tab'>
-            <h1 className='text-white text-3xl'>Tab Two Content</h1>
-          </div>
+          <h1 className='text-white text-3xl'>HTML</h1>
         )}
         {activeTab === 'tabThree' && (
-          <div id='jsx-tab'>
-            <h1 className='text-white text-3xl'>Tab Three Content</h1>
-          </div>
+          <h1 className='text-white text-3xl'>JSX</h1>
         )}
       </div>
     </div>
   );
 }
 
-export default Tabs;
+export default MockUpCode;

@@ -11,15 +11,13 @@ function Components() {
         <h1 className='text-4xl mb-10 text-indigo-600 font-bold text-center mt-10'>
           Browse our selection of components
         </h1>
-        <div
-          className='mt-10 w-2/3 mx-auto min-h-[calc(100vh-5rem)] grid grid-cols-3 gap-4 justify-center'
-        >
-          {components.sort().map((component) => {
-            return (
-              <ComponentsGridItem key={component.id} component={component} />
-            )
+        <div className='mt-10 w-2/3 mx-auto min-h-[calc(100vh-5rem)] grid grid-cols-3 gap-4 justify-center'>
+          {components.sort().map((component, index) => {
+            return <ComponentsGridItem key={index} component={component} />;
+            // turn components data in array of objects which holds the code && preview of components
           })}
         </div>
+        {/*another map same as above for the page components data */}
       </div>
     </div>
   );

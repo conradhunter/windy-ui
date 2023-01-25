@@ -45,31 +45,24 @@ export const faqs = [
   },
   {
     id: 9,
-    question: 'Is there documentation available for the WindyUI components?',
-    answer: 'Yes click the link to see our documentation',
-    hasLink: true,
-    externalLink: '/docs',
-  },
-  {
-    id: 10,
     question:
       'Is there a community forum or support channel for WindyUI users?',
-    answer: 'Yes, follow the link to visit our discord',
+    answer: 'Yes, follow the link to visit our discord.',
     hasLink: true,
     externalLink: 'https://discord.com/',
   },
   {
-    id: 11,
+    id: 10,
     question:
       'Is there a way to preview the WindyUI components before using them in my project?',
     answer:
       'Yes, all components are available for preview along with the required source code.',
   },
   {
-    id: 12,
+    id: 11,
     question:
       'Can I contribute to the development of the WindyUI component library?',
     answer:
-      'Yes, we will always accept contributions to our library, for more info visit our discord',
+      'Yes, we will always accept contributions to our library, for more info visit our discord.',
   },
 ];

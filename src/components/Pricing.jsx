@@ -11,7 +11,7 @@ function Pricing() {
   return (
     <section className='pt-24 pb-28 overflow-hidden bg-blue-200'>
       <div className='container px-4 mx-auto'>
-        <h2 className='mb-24 text-2xl md:text-6xl font-bold font-heading text-center tracking-px-n leading-tight md:max-w-xl mx-auto'>
+        <h2 className='mb-24 text-2xl md:text-6xl font-bold font-heading text-center leading-tight md:max-w-xl mx-auto'>
           Choose a plan that suits you. Fast and stylish UI components.
         </h2>
         <div className='mb-24 md:max-w-6xl mx-auto'>
@@ -19,7 +19,7 @@ function Pricing() {
             <div className='w-full md:w-1/3 p-4'>
               <div className='flex flex-col px-9 pt-8 pb-9 h-full bg-white bg-opacity-90 border-blueGray-100 rounded-3xl'>
                 <div>
-                  <span className='mb-5 inline-block text-sm text-indigo-600 font-semibold uppercase tracking-px leading-snug'>
+                  <span className='mb-5 inline-block text-sm text-indigo-600 font-semibold uppercase leading-snug'>
                     Basic
                   </span>
                   <h3 className='mb-1 text-4xl text-gray-900 font-bold leading-none'>
@@ -33,7 +33,7 @@ function Pricing() {
                   </p>
                 </div>
                 <Link
-                  to='/'
+                  to='/components'
                   className='py-4 px-9 text-center w-full font-semibold border border-blueGray-300 hover:border-blueGray-400 rounded-xl focus:ring focus:ring-gray-50 bg-white hover:bg-gray-50 transition ease-in-out duration-200'
                   type='button'
                 >
@@ -50,7 +50,10 @@ function Pricing() {
                   <span className='mb-5 inline-block text-sm text-indigo-600 font-semibold uppercase tracking-px leading-snug'>
                     Business
                   </span>
-                  <h3 className='mb-1 text-4xl text-gray-900 font-bold leading-none'>
+                  <h3 className='mb-1 text-4xl text-red-500 font-bold leading-none flex items-center'>
+                    $49
+                  </h3>
+                  <h3 className='mb-1 text-2xl text-gray-900 font-bold leading-none line-through'>
                     $249
                   </h3>
                   <p className='mb-6 text-sm text-gray-600 font-medium leading-relaxed'>
@@ -77,7 +80,10 @@ function Pricing() {
                   <span className='mb-5 inline-block text-sm text-indigo-600 font-semibold uppercase tracking-px leading-snug'>
                     Enterprise
                   </span>
-                  <h3 className='mb-1 text-4xl text-gray-900 font-bold leading-none'>
+                  <h3 className='mb-1 text-4xl text-red-500 font-bold leading-none'>
+                    $249
+                  </h3>
+                  <h3 className='mb-1 text-2xl text-gray-900 font-bold leading-none line-through'>
                     $649
                   </h3>
                   <p className='mb-6 text-sm text-gray-600 font-medium leading-relaxed'>

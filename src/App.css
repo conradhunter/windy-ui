@@ -6,6 +6,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .navbar {
@@ -26,4 +27,18 @@ html {
 
 #componentsCustomMargin {
   margin-left: 16.666666667%;
+}
+
+.animate-open {
+  animation: slideInRight 0.5s ease-in;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }

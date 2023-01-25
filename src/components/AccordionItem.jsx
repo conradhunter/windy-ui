@@ -21,7 +21,7 @@ function AccordionItem({ isOpen, handleOpenAccordion, faq }) {
   }
 
   return (
-    <div className='bg-blue-100 py-5 px-8 border-b-2 border-blue-300 w-7/12'>
+    <div className='bg-blue-100 py-5 px-8 border-b-2 border-blue-300 w-6/12'>
       <div
         className='flex items-center justify-between'
         onClick={handleOpenAccordion}

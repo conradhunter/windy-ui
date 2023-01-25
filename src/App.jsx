@@ -15,13 +15,12 @@ import Error from './pages/errors/Error';
 import FAQ from './pages/FAQ';
 import Footer from './components/Footer';
 import ChangeLog from './pages/ChangeLog';
+import Component from './components/Component';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
-  const [isBusinessPlan, setBusinessPlan] = useState(false);
-  const [isEnterprisePlan, setEnterprisePlan] = useState(false);
 
-  // Animate on scroll library
+  const names = ['utilityUI', 'windytailUI', 'windy component library'];
 
   return (
     <div className='App'>
@@ -33,10 +32,8 @@ function App() {
           path='/welcome'
           element={<InitialAuth setIsAuth={setIsAuth} />}
         />
-        <Route
-          path='/components'
-          element={<Components />}
-        />
+        <Route path='/components' element={<Components />} />
+        <Route path='/components/:id' element={<Component />} />
         <Route path='/playground' element={<Playground />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/error' element={<Error />} />
