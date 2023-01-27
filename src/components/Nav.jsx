@@ -74,7 +74,7 @@ function Nav({ isAuth }) {
           <div className='lg:hidden xl:flex items-center md:hidden sm:hidden min-[100px]:hidden'>
             <Link
               className='block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2'
-              to='/sign-in'
+              to='/login'
             >
               {!isAuth ? <span>Sign in</span> : <span>Log out</span>}
               {/*  // TODO check cookies if user was prev signed in, if so show signIn otherwise signUp   */}
