@@ -37,6 +37,7 @@ function App() {
         <Route path='/error' element={<Error />} />
         <Route path='/faq' element={<FAQ />} />
         <Route path='/change-log' element={<ChangeLog />} />
+        <Route path='/login' />
 
         {/* Policies & Terms routes */}
         <Route path='/cookies-policy' element={<CookiesPolicy />} />
