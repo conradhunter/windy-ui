@@ -12,7 +12,7 @@ function Components() {
           Browse our selection of components
         </h1>
         <div className='mt-10 w-2/3 mx-auto min-h-[calc(100vh-5rem)] grid grid-cols-3 gap-4 justify-center'>
-          {components.sort().map((component, index) => {
+          {components.map((component, index) => {
             return <ComponentsGridItem key={index} component={component} />;
             // turn components data in array of objects which holds the code && preview of components
           })}

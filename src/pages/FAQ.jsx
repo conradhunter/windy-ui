@@ -10,7 +10,7 @@ function FAQ() {
   };
 
   return (
-    <div className='flex flex-col items-center mx-auto min-h-[calc(100vh-5rem)] py-10 gap-4'>
+    <div className='flex flex-col items-center mx-auto min-h-[calc(100vh-5rem)] py-10'>
       <h1 className='text-4xl mb-10 text-indigo-600 font-bold'>
         Frequently Asked Questions
       </h1>

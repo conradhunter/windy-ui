@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useAuth0 } from '@auth0/auth0-react';
 
-function Nav({ isAuth }) {
+function Nav({ isAuthenticated }) {
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -19,6 +20,13 @@ function Nav({ isAuth }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [modalOpen]);
+
+  useEffect(() => {
+    document.cookie = 'yourCookieName=yourCookieValue; path=/; SameSite=Lax';
+  }, []);
+
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
 
   // TODO create logic to that hamburger modal automatically closes if screen gets larger (past certain screen width, when normal nav nodes become shown)
 
@@ -72,13 +80,24 @@ function Nav({ isAuth }) {
             </li>
           </ul>
           <div className='lg:hidden xl:flex items-center md:hidden sm:hidden min-[100px]:hidden'>
-            <Link
-              className='block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2'
-              to='/login'
-            >
-              {!isAuth ? <span>Sign in</span> : <span>Log out</span>}
-              {/*  // TODO check cookies if user was prev signed in, if so show signIn otherwise signUp   */}
-            </Link>
+            {!isAuthenticated ? (
+              <button
+                onClick={() => loginWithRedirect()}
+                className='block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2'
+              >
+                Sign in
+              </button>
+            ) : (
+              <button
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+                className='block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2'
+              >
+                Log out
+              </button>
+            )}
+
             <Link
               className='block py-3 px-5 mr-6 text-center font-medium leading-6 text-md text-white bg-indigo-500 hover:bg-indigo-700 border-3 border-indigo-900 shadow rounded transition duration-200'
               to='/contact'
