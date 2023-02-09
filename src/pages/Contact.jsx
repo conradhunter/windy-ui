@@ -5,8 +5,6 @@ function Contact() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
-
-
   return (
     <div className='container px-4 mx-auto min-h-[calc(100vh-5rem)] flex items-center justify-center'>
       <div className='max-w-lg mx-auto py-12 px-8 bg-gray-100 rounded-xl text-center shadow-2xl'>
@@ -34,7 +32,10 @@ function Contact() {
             className='w-full py-3 pl-3 mb-4 bg-white border rounded-lg'
             onChange={(e) => setMessage(e.target.value)}
           />
-          <button type='submit' className='w-full inline-block px-6 py-3 mb-4 text-sm text-white font-bold leading-loose bg-indigo-500 hover:bg-indigo-700 rounded transition duration-200'>
+          <button
+            type='submit'
+            className='w-full inline-block px-6 py-3 mb-4 text-sm text-white font-bold leading-loose bg-indigo-500 hover:bg-indigo-700 rounded transition duration-200'
+          >
             Send it our way
           </button>
         </form>
