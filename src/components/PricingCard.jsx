@@ -2,12 +2,12 @@ import React from 'react';
 
 function PricingCard({ data }) {
   return (
-    <div className='bg-gray-100 p-8 rounded-lg shadow-xl w-80 border-2 border-indigo-500'>
+    <div className='bg-gray-100 p-8 rounded-lg shadow-xl w-80 '>
       <h3 className='text-3xl font-bold text-center text-indigo-600'>
         {data.plan}
       </h3>
       <div className='text-center text-gray-600'>
-        <p className='my-4'>Perfect for small businesses</p>
+        <p className='my-4'>{data.for}</p>
       </div>
       <div className='flex items-center justify-center mt-8'>
         {data.price === 'Free' ? (

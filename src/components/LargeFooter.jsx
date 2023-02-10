@@ -10,6 +10,11 @@ function LargeFooter() {
             <ul className=''>
               <li className='mb-4'>
                 <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                  Components
+                </a>
+              </li>
+              <li className='mb-4'>
+                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
                   FAQ
                 </a>
               </li>
@@ -77,13 +82,13 @@ function LargeFooter() {
               Subscribe to our newsletter
             </h3>
             <p className='text-sm mb-4'>
-              Get the latest updates and news from our website
+              Get the latest updates and news from WindiKit
             </p>
-            <div className='flex items-center bg-white rounded-lg'>
+            <div className='flex items-center bg-white rounded-lg px-2 py-2'>
               <input
                 type='email'
                 placeholder='Enter your email address'
-                className='w-full p-2 rounded-lg text-indigo-500 text-sm outline-none'
+                className='w-full p-2 rounded-lg text-sm outline-none'
               />
               <button className='w-fit p-2 text-white bg-indigo-600 text-sm rounded-lg hover:bg-indigo-700 transition duration-200'>
                 Subscribe

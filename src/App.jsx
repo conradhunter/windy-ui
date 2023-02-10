@@ -12,9 +12,10 @@ import Error from './pages/errors/Error';
 import FAQ from './pages/FAQ';
 import ChangeLog from './pages/ChangeLog';
 import Component from './components/Component';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import LargeFooter from './components/LargeFooter';
+import Profile from './pages/Profile';
 
 function App() {
   const { isLoading, error, isAuthenticated, getIdTokenClaims, renewSession } =
@@ -59,6 +60,8 @@ function App() {
     renewSessionOnLoad();
   }, [isAuthenticated, renewSession]);
 
+  const [theme, setTheme] = useState('light'); // TODO handle light and dark mode using this state
+
   return (
     <div className='App'>
       <Nav isAuthenticated={isAuthenticated} />
@@ -71,6 +74,7 @@ function App() {
         <Route path='/error' element={<Error />} />
         <Route path='/faq' element={<FAQ />} />
         <Route path='/change-log' element={<ChangeLog />} />
+        <Route path='/profile' element={<Profile />} />
 
         {/* Policies & Terms routes */}
         <Route path='/cookies-policy' element={<CookiesPolicy />} />

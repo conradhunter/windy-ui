@@ -9,6 +9,8 @@ import PricingCard from './PricingCard';
 import { basic, business, enterprise } from '../data/pricing';
 
 function Pricing() {
+  const numOfPriceCards = 3;
+
   return (
     <section className='pt-24 pb-28 overflow-hidden bg-blue-200'>
       <div className='container px-4 mx-auto'>
