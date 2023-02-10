@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import '../App.css';
 import Pricing from '../components/Pricing';
+import Testimonals from '../components/Testimonals';
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
             fontWeight: 'bold',
           }}
         />
+        <h1 className='text-5xl font-bold'>WindiKit</h1>
         <p className='py-6 w-1/3 text-center'>
           A Tailwind UI library with 50+ fully responsive components ready for
           your next project.
@@ -31,11 +33,8 @@ function Home() {
           </button>
         </Link>
       </div>
-      <div id='pricing' className='h-screen'>
-        {/* Pricing */}
-        <Pricing />
-        {/* Customer reviews */}
-      </div>
+      <Pricing />
+      <Testimonals />
     </div>
   );
 }

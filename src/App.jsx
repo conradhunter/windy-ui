@@ -10,11 +10,11 @@ import TermsOfService from './pages/policies/TermsOfService';
 import Contact from './pages/Contact';
 import Error from './pages/errors/Error';
 import FAQ from './pages/FAQ';
-import Footer from './components/Footer';
 import ChangeLog from './pages/ChangeLog';
 import Component from './components/Component';
 import { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import LargeFooter from './components/LargeFooter';
 
 function App() {
   const { isLoading, error, isAuthenticated, getIdTokenClaims, renewSession } =
@@ -77,8 +77,7 @@ function App() {
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-of-service' element={<TermsOfService />} />
       </Routes>
-
-      {/* <Footer /> */}
+      <LargeFooter />
     </div>
   );
 }

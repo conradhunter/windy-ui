@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useAuth0 } from '@auth0/auth0-react';
+import UserProfilePreview from './UserProfilePreview';
 
 function Nav({ isAuthenticated }) {
   const location = useLocation();
@@ -20,10 +21,6 @@ function Nav({ isAuthenticated }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [modalOpen]);
-
-  useEffect(() => {
-    document.cookie = 'yourCookieName=yourCookieValue; path=/; SameSite=Lax';
-  }, []);
 
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
@@ -104,6 +101,7 @@ function Nav({ isAuthenticated }) {
             >
               Contact Us
             </Link>
+            <UserProfilePreview />
           </div>
           <div className='lg:hidden xl:hidden py-6 px-6 bg-gray-800'>
             <div className='flex items-center justify-between'>

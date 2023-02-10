@@ -8,17 +8,17 @@ function Contact() {
   return (
     <div className='container px-4 mx-auto min-h-[calc(100vh-5rem)] flex items-center justify-center'>
       <div className='max-w-lg mx-auto py-12 px-8 bg-gray-100 rounded-xl text-center shadow-2xl'>
-        <h3 className='mb-8 text-3xl font-bold font-heading'>Contact Us</h3>
+        <h3 className='mb-8 text-3xl font-bold text-indigo-500'>Contact Us</h3>
         <form>
           <input
-            className='w-full py-3 pl-3 mb-4 bg-white border rounded-lg'
+            className='w-full py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg'
             type='text'
             autoComplete=''
             placeholder='Full Name'
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            className='w-full py-3 pl-3 mb-4 bg-white border rounded-lg'
+            className='w-full py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg'
             type='email'
             autoComplete='email'
             placeholder='E-mail address'
@@ -29,7 +29,7 @@ function Contact() {
             cols='30'
             rows='5'
             placeholder='Your message...'
-            className='w-full py-3 pl-3 mb-4 bg-white border rounded-lg'
+            className='w-full py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg'
             onChange={(e) => setMessage(e.target.value)}
           />
           <button

@@ -5,19 +5,20 @@ import mastercard from '../assets/logos/mastercard.svg';
 import paypal from '../assets/logos/paypal.svg';
 import visa from '../assets/logos/visa.svg';
 import applePay from '../assets/logos/apple-pay.svg';
-import { Link } from 'react-router-dom';
+import PricingCard from './PricingCard';
+import { basic, business, enterprise } from '../data/pricing';
 
 function Pricing() {
   return (
     <section className='pt-24 pb-28 overflow-hidden bg-blue-200'>
       <div className='container px-4 mx-auto'>
-        <h2 className='mb-24 text-xl md:text-5xl font-bold font-heading text-center leading-tight md:max-w-xl mx-auto'>
+        <h2 className='mb-24 text-xl md:text-5xl font-bold text-indigo-600 text-center leading-tight md:max-w-xl mx-auto'>
           Choose a plan that suits you. Fast and stylish UI components.
         </h2>
-        <div className='mb-24 md:max-w-6xl mx-auto flex justify-evenly'>
-          <div id='price-card' className='bg-blue-100 w-2/6'>
-            Business
-          </div>
+        <div className='mb-24 mx-auto flex justify-evenly'>
+          <PricingCard data={basic} />
+          <PricingCard data={business} />
+          <PricingCard data={enterprise} />
         </div>
         <p className='mb-4 text-sm text-gray-500 text-center font-medium leading-relaxed'>
           Trusted by secure payment service
