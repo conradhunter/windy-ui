@@ -24,7 +24,7 @@ function Home() {
         />
         <h1 className='text-5xl font-bold'>WindiKit</h1>
         <p className='py-6 w-1/3 text-center'>
-          A Tailwind UI library with 50+ fully responsive components ready for
+          A Tailwind UI library with 100+ fully responsive components ready for
           your next project.
         </p>
         <Link to='/components'>

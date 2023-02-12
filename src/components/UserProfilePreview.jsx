@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import avatar from '../assets/avatar.svg';
 
 function UserProfilePreview() {
   const { isAuthenticated, user } = useAuth0();
+
+  // TODO - add logic to fetch user data from DB to check provider and display appropriate avatar
 
   return (
     <div className='rounded-full bg-gray-300 w-9 h-9 overflow-hidden flex items-center justify-center'>

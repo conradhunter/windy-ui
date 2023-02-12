@@ -12,7 +12,7 @@ function Pricing() {
   const numOfPriceCards = 3;
 
   return (
-    <section className='pt-24 pb-28 overflow-hidden bg-blue-200'>
+    <section id='pricing' className='pt-24 pb-28 overflow-hidden bg-blue-200'>
       <div className='container px-4 mx-auto'>
         <h2 className='mb-24 text-xl md:text-5xl font-bold text-indigo-600 text-center leading-tight md:max-w-xl mx-auto'>
           Choose a plan that suits you. Fast and stylish UI components.

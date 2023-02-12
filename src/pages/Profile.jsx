@@ -1,15 +1,13 @@
+import { withAuthenticationRequired } from '@auth0/auth0-react';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DeleteAccountButton from '../components/Buttons/DeleteAccountButton';
 
-function Profile() {
+function Profile({ setTheme }) {
   // TODO render users information at top of profile page
   const profileImage =
     'https://pbs.twimg.com/profile_images/1605762947686375425/lsoGWWty_400x400.jpg';
-
-  const handleThemeChange = () => {
-    // TODO change theme to dark or light mode
-  };
 
   return (
     <div className='flex flex-col justify-center items-center my-12 gap-8'>
@@ -47,10 +45,16 @@ function Profile() {
         <div className='flex flex-col gap-6'>
           <div className='flex items-center'>
             <span className='mr-4'>Theme:</span>
-            <button className='flex items-center mr-4 hover:bg-indigo-100 duration-200 p-2 rounded-lg gap-3'>
+            <button
+              onClick={() => setTheme('light')}
+              className='flex items-center mr-4 hover:bg-indigo-100 duration-200 p-2 rounded-lg gap-3'
+            >
               Light <LightModeOutlined />
             </button>
-            <button className='flex items-center hover:bg-indigo-100 duration-200 p-2 rounded-lg gap-3'>
+            <button
+              onClick={() => setTheme('dark')}
+              className='flex items-center hover:bg-indigo-100 duration-200 p-2 rounded-lg gap-3'
+            >
               Dark <DarkModeOutlined />
             </button>
           </div>
@@ -73,9 +77,7 @@ function Profile() {
             </Link>
           </div>
           <div className='flex items-center py-2'>
-            <button className='bg-red-700 opacity-85 text-white p-3 rounded-lg hover:bg-red-500'>
-              Delete Account
-            </button>
+            <DeleteAccountButton />
           </div>
         </div>
       </section>
@@ -83,4 +85,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default withAuthenticationRequired(Profile);

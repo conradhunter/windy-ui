@@ -18,8 +18,7 @@ import LargeFooter from './components/LargeFooter';
 import Profile from './pages/Profile';
 
 function App() {
-  const { isLoading, error, isAuthenticated, getIdTokenClaims, renewSession } =
-    useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   useEffect(() => {
     if (isAuthenticated === true) {
@@ -29,36 +28,6 @@ function App() {
     }
     // debugging purposes
   });
-
-  useEffect(() => {
-    const initAuth0 = async () => {
-      if (isAuthenticated) {
-        return;
-      }
-
-      try {
-        await getIdTokenClaims();
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    initAuth0();
-  }, [isAuthenticated, getIdTokenClaims]);
-
-  useEffect(() => {
-    const renewSessionOnLoad = async () => {
-      if (!isAuthenticated) return;
-
-      try {
-        await renewSession();
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    renewSessionOnLoad();
-  }, [isAuthenticated, renewSession]);
 
   const [theme, setTheme] = useState('light'); // TODO handle light and dark mode using this state
 
@@ -74,7 +43,7 @@ function App() {
         <Route path='/error' element={<Error />} />
         <Route path='/faq' element={<FAQ />} />
         <Route path='/change-log' element={<ChangeLog />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile setTheme={setTheme} />} />
 
         {/* Policies & Terms routes */}
         <Route path='/cookies-policy' element={<CookiesPolicy />} />

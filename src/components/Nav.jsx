@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useAuth0 } from '@auth0/auth0-react';
 import UserProfilePreview from './UserProfilePreview';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function Nav({ isAuthenticated }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,7 +24,11 @@ function Nav({ isAuthenticated }) {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
 
-  // TODO create logic to that hamburger modal automatically closes if screen gets larger (past certain screen width, when normal nav nodes become shown)
+  const handleNavigatePricing = () => {
+    setTimeout(() => {
+      window.location.href = 'https://127.0.0.1:5173/#pricing';
+    }, 500);
+  };
 
   return (
     <nav className='flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between min-[100px]:justify-between px-10'>
@@ -57,12 +61,13 @@ function Nav({ isAuthenticated }) {
           </Link>
         </li>
         <li>
-          <a
+          <Link
+            onClick={handleNavigatePricing}
             className='text-md py-3 px-5 hover:bg-gray-700 rounded duration-200'
-            href='/#pricing'
+            to='/'
           >
             Pricing
-          </a>
+          </Link>
         </li>
         <li>
           <Link
@@ -106,6 +111,8 @@ function Nav({ isAuthenticated }) {
           <button onClick={() => loginWithRedirect()}>
             <UserProfilePreview />
           </button>
+          // <Link to='/profile'> after the sign in method is complete
+          // after initial click of UserProfilePreview, show modal asking user if they want to sign in
         )}
       </div>
       <div className='lg:hidden xl:hidden py-6 px-6 bg-gray-800'>

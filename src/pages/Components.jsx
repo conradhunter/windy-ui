@@ -6,9 +6,9 @@ function Components() {
   // TODO: Create new grid layout for the components to be viewed rather than using the sidebar
 
   return (
-    <div className=''>
+    <div className='my-10'>
       <div>
-        <h1 className='text-4xl mb-10 text-indigo-600 font-bold text-center mt-10'>
+        <h1 className='text-4xl mb-10 text-indigo-600 font-bold text-center'>
           Browse our selection of components
         </h1>
         <div className='mt-10 w-2/3 mx-auto min-h-[calc(100vh-5rem)] grid grid-cols-3 gap-4 justify-center'>

@@ -17,7 +17,7 @@ function MockUpCode({ preview, jsx, html }) {
 
   return (
     <div className='w-2/3'>
-      <ul className='flex gap'>
+      <ul className='flex gap-1'>
         <li
           className={`py-1 px-3 ${
             activeTab === 'tabOne'

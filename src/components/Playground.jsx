@@ -1,7 +1,5 @@
 import React from 'react';
 import MockUpCode from './MockUpCode';
-import Pagination from './WindyComponents/Pagination';
-import Skeleton from './WindyComponents/Skeleton';
 
 function Playground() {
   return (
@@ -11,9 +9,7 @@ function Playground() {
       <div className='flex h-screen justify-center'>
         <div className='w-screen pl-44'>
           {/* test components here */}
-          {/* <MockUpCode /> */}
-          {/* <Skeleton height={'h-72'} width={'w-72'} /> */}
-          {/* <Pagination /> */}
+          <MockUpCode preview={'preview'} jsx={'jsx'} html={'html'} />
         </div>
       </div>
     </div>

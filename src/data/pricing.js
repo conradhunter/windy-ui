@@ -11,7 +11,8 @@ export const basic = {
 };
 export const business = {
   plan: 'Business',
-  price: 250,
+  price: 499,
+  earlyBirdPrice: 250,
   for: 'For small teams',
   features: [
     'Up to 10 users',
@@ -22,7 +23,8 @@ export const business = {
 };
 export const enterprise = {
   plan: 'Enterprise',
-  price: 500,
+  price: 749,
+  earlyBirdPrice: 499,
   for: 'For large teams',
   features: [
     'Up to 25 users',
