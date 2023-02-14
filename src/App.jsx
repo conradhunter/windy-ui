@@ -8,7 +8,7 @@ import CookiesPolicy from './pages/policies/CookiesPolicy';
 import PrivacyPolicy from './pages/policies/PrivacyPolicy';
 import TermsOfService from './pages/policies/TermsOfService';
 import Contact from './pages/Contact';
-import Error from './pages/errors/Error';
+import Error from './pages/error/Error';
 import FAQ from './pages/FAQ';
 import ChangeLog from './pages/ChangeLog';
 import Component from './components/Component';
@@ -20,16 +20,25 @@ import Profile from './pages/Profile';
 function App() {
   const { isAuthenticated } = useAuth0();
 
-  useEffect(() => {
-    if (isAuthenticated === true) {
-      console.log('User is authenticated');
-    } else {
-      console.log('User is not authenticated');
-    }
-    // debugging purposes
-  });
-
   const [theme, setTheme] = useState('light'); // TODO handle light and dark mode using this state
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  // Demo auth account:
+  // email: email@example.com
+  // password: Test1234
+
+  // Check to see if Media-Queries are supported
+  if (window.matchMedia) {
+    // Check if the dark-mode Media-Query matches
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // Dark
+    } else {
+      // Light
+    }
+  } else {
+    // Default (when Media-Queries are not supported)
+  }
 
   return (
     <div className='App'>

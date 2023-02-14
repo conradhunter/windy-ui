@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import UserProfilePreview from './UserProfilePreview';
-import { useAuth0 } from '@auth0/auth0-react';
+import ContactLinkButton from './Buttons/ContactLinkButton';
+import LogOutButton from './Buttons/LogOutButton';
+import SignInButton from './Buttons/SignInButton';
+import { handleNavigatePricing } from '../exportedFunctions';
 
 function Nav({ isAuthenticated }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,15 +23,6 @@ function Nav({ isAuthenticated }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [modalOpen]);
-
-  const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
-
-  const handleNavigatePricing = () => {
-    setTimeout(() => {
-      window.location.href = 'https://127.0.0.1:5173/#pricing';
-    }, 500);
-  };
 
   return (
     <nav className='flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between min-[100px]:justify-between px-10'>
@@ -79,30 +73,9 @@ function Nav({ isAuthenticated }) {
         </li>
       </ul>
       <div className='lg:hidden xl:flex items-center md:hidden sm:hidden min-[100px]:hidden'>
-        {!isAuthenticated ? (
-          <button
-            onClick={() => loginWithRedirect()}
-            className='block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2'
-          >
-            Sign in
-          </button>
-        ) : (
-          <button
-            onClick={() =>
-              logout({ logoutParams: { returnTo: window.location.origin } })
-            }
-            className='block py-3 px-5 text-center leading-6 text-md text-white hover:bg-gray-700 rounded duration-200 mr-2'
-          >
-            Log out
-          </button>
-        )}
+        {!isAuthenticated ? <SignInButton /> : <LogOutButton />}
 
-        <Link
-          className='block py-3 px-5 mr-6 text-center font-medium leading-6 text-md text-white bg-indigo-500 hover:bg-indigo-700 border-3 border-indigo-900 shadow rounded transition duration-200'
-          to='/contact'
-        >
-          Contact Us
-        </Link>
+        <ContactLinkButton />
         {isAuthenticated ? (
           <Link to='/profile'>
             <UserProfilePreview />

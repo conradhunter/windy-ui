@@ -1,3 +1,4 @@
+import { withAuthenticationRequired } from '@auth0/auth0-react';
 import React from 'react';
 import ComponentsGridItem from '../components/ComponentsGridItem';
 import { components, pageComponents } from '../data/componentCategories';
@@ -23,4 +24,4 @@ function Components() {
   );
 }
 
-export default Components;
+export default withAuthenticationRequired(Components);

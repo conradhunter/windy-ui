@@ -1,6 +1,25 @@
 import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
+import { scrollToTopOnMount } from '../exportedFunctions';
 
 function PricingCard({ data }) {
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+
+  function handleChoosePlan() {
+    if (isAuthenticated && !data.paymentLink) {
+      return (
+        <Link onClick={() => scrollToTopOnMount()} to='/components'>
+          View Components
+        </Link>
+      );
+    } else if (data.paymentLink) {
+      return <a href={data.paymentLink}>Choose Plan</a>;
+    } else if (!data.paymentLink) {
+      return <Link onClick={() => loginWithRedirect()}>Choose Plan</Link>;
+    }
+  }
+
   return (
     <div className='bg-gray-100 p-8 rounded-lg shadow-xl w-80 '>
       <h3 className='text-3xl font-bold text-center text-indigo-600'>
@@ -40,8 +59,13 @@ function PricingCard({ data }) {
         ))}
       </ul>
       <div className='flex items-center justify-center mt-12'>
-        <button className='bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded'>
-          Choose Plan
+        <button
+          disabled={!isAuthenticated}
+          className={`bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded ${
+            !isAuthenticated ? 'cursor-not-allowed' : null
+          }`}
+        >
+          {handleChoosePlan()}
         </button>
       </div>
     </div>

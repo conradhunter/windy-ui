@@ -1,6 +1,21 @@
-import React from 'react';
+import { addDoc, collection } from 'firebase/firestore';
+import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { db } from '../backend/firebase/FirebaseConfiguration';
+import { handleNavigatePricing } from '../exportedFunctions';
 
 function LargeFooter() {
+  const mailingListCollection = collection(db, 'mailing-list-users');
+  const [email, setEmail] = useState('');
+  const mailingListInputRef = useRef(null);
+
+  const handleSubscribe = async () => {
+    await addDoc(mailingListCollection, {
+      email,
+    });
+    mailingListInputRef.current.value = '';
+  };
+
   return (
     <footer className='bg-blue-100 flex py-12'>
       <div className='container mx-auto px-4'>
@@ -9,29 +24,42 @@ function LargeFooter() {
             <h4 className='mb-4 text-lg text-black font-medium'>Links</h4>
             <ul className=''>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link
+                  className='text-indigo-500 hover:text-indigo-300'
+                  to='/components'
+                >
                   Components
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link
+                  className='text-indigo-500 hover:text-indigo-300'
+                  to='/faq'
+                >
                   FAQ
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link
+                  onClick={handleNavigatePricing}
+                  className='text-indigo-500 hover:text-indigo-300'
+                  to='/'
+                >
                   Pricing
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link
+                  className='text-indigo-500 hover:text-indigo-300'
+                  to='/change-log'
+                >
                   Change Log
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -41,19 +69,19 @@ function LargeFooter() {
             </h4>
             <ul className=''>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   GitHub
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Twitter
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   LinkedIn
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -61,19 +89,19 @@ function LargeFooter() {
             <h4 className='mb-4 text-lg text-black font-medium'>Legal</h4>
             <ul className=''>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Cookies Policy
-                </a>
+                </Link>
               </li>
               <li className='mb-4'>
-                <a className='text-indigo-500 hover:text-indigo-300' href='#'>
+                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,10 +115,15 @@ function LargeFooter() {
             <div className='flex items-center bg-white rounded-lg px-2 py-2'>
               <input
                 type='email'
+                onChange={(e) => setEmail(e.target.value)}
+                ref={mailingListInputRef}
                 placeholder='Enter your email address'
                 className='w-full p-2 rounded-lg text-sm outline-none'
               />
-              <button className='w-fit p-2 text-white bg-indigo-600 text-sm rounded-lg hover:bg-indigo-700 transition duration-200'>
+              <button
+                onClick={handleSubscribe}
+                className='w-fit p-2 text-white bg-indigo-600 text-sm rounded-lg hover:bg-indigo-700 transition duration-200'
+              >
                 Subscribe
               </button>
             </div>

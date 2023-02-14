@@ -12,7 +12,7 @@ export const basic = {
 export const business = {
   plan: 'Business',
   price: 499,
-  earlyBirdPrice: 250,
+  earlyBirdPrice: 249,
   for: 'For small teams',
   features: [
     'Up to 10 users',
@@ -20,10 +20,11 @@ export const business = {
     'Priority support',
     'Lifetime updates & access',
   ],
+  paymentLink: 'https://buy.stripe.com/14k02R46G5NL3XqbIM',
 };
 export const enterprise = {
   plan: 'Enterprise',
-  price: 749,
+  price: 649,
   earlyBirdPrice: 499,
   for: 'For large teams',
   features: [
@@ -32,4 +33,5 @@ export const enterprise = {
     'Priority support',
     'Lifetime updates & access',
   ],
+  paymentLink: 'https://buy.stripe.com/bIY5nbbz8dgdgKcaEH',
 };
