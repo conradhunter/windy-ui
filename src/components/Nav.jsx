@@ -128,9 +128,15 @@ function Nav({ isAuthenticated }) {
             <li>
               <Link to='/'>Change Log</Link>
             </li>
-            <li>
-              <Link to='/'>Sign In</Link>
-            </li>
+            {isAuthenticated ? (
+              <li>
+                <Link to='/'>Sign Out</Link>
+              </li>
+            ) : (
+              <li>
+                <Link to='/'>Sign In</Link>
+              </li>
+            )}
             <li>
               <Link to='/'>Contact</Link>
             </li>

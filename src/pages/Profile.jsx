@@ -16,29 +16,27 @@ function Profile({ setTheme }) {
           Hi Conrad!
         </h1>
         <div className='w-full flex justify-center items-center'>
-          <div className='mr-20'>
+          <div className='mr-16'>
             <img src={profileImage} className='w-16 h-16 rounded-full' alt='' />
           </div>
-          <div className='flex'>
-            <div className='flex mb-10 gap-12'>
-              <div className='flex flex-col'>
-                <label className='text-gray-500' htmlFor=''>
-                  Name:
-                </label>
-                <span>Conrad Hunter</span>
-              </div>
-              <div className='flex flex-col'>
-                <label className='text-gray-500' htmlFor=''>
-                  Email:
-                </label>
-                <span>conrad@conradhunterdev.com</span>
-              </div>
-              <div className='flex flex-col'>
-                <label className='text-gray-500' htmlFor=''>
-                  Phone Number:
-                </label>
-                <span>250-863-2504</span>
-              </div>
+          <div className='flex items-center gap-12'>
+            <div className='flex flex-col'>
+              <label className='text-gray-500' htmlFor=''>
+                Name:
+              </label>
+              <span>Conrad Hunter</span>
+            </div>
+            <div className='flex flex-col'>
+              <label className='text-gray-500' htmlFor=''>
+                Email:
+              </label>
+              <span>conrad@conradhunterdev.com</span>
+            </div>
+            <div className='flex flex-col'>
+              <label className='text-gray-500' htmlFor=''>
+                Phone Number:
+              </label>
+              <span>250-863-2504</span>
             </div>
           </div>
         </div>

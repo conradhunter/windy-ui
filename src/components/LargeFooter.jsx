@@ -89,6 +89,14 @@ function LargeFooter() {
             <h4 className='mb-4 text-lg text-black font-medium'>Legal</h4>
             <ul className=''>
               <li className='mb-4'>
+                <Link
+                  className='text-indigo-500 hover:text-indigo-300'
+                  to='/terms-of-service'
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li className='mb-4'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Privacy Policy
                 </Link>
@@ -96,11 +104,6 @@ function LargeFooter() {
               <li className='mb-4'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Cookies Policy
-                </Link>
-              </li>
-              <li className='mb-4'>
-                <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
-                  Terms of Service
                 </Link>
               </li>
             </ul>

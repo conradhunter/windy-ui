@@ -1,54 +1,30 @@
 import React from 'react';
+import { steps } from '../data/changeLogSteps';
 
 function Steps() {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col mx-40 my-20'>
+      <h1 className='text-4xl mb-10 text-indigo-600 font-bold text-center'>
+        View our update and change log history
+      </h1>
       <div className='py-6'>
-        <div className='flex items-center relative'>
-          <div className='w-12 h-12 bg-indigo-500 text-white text-center rounded-full'>
-            1
-          </div>
-          <div className='pl-4'>
-            <div className='font-medium text-indigo-500'>January 1, 2023</div>
-            <div className='text-gray-600'>
-              This is the first step update with a brief description of what was
-              added or improved.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='relative'>
-        <div className='absolute left-0 top-6 bottom-6 border-l border-indigo-500'></div>
-      </div>
-      <div className='py-6'>
-        <div className='flex items-center relative'>
-          <div className='w-12 h-12 bg-indigo-500 text-white text-center rounded-full'>
-            2
-          </div>
-          <div className='pl-4'>
-            <div className='font-medium text-indigo-500'>January 15, 2023</div>
-            <div className='text-gray-600'>
-              This is the second step update with a brief description of what
-              was added or improved.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='relative'>
-        <div className='absolute left-0 top-6 bottom-6 border-l border-indigo-500'></div>
-      </div>
-      <div className='py-6'>
-        <div className='flex items-center relative'>
-          <div className='w-12 h-12 bg-indigo-500 text-white text-center rounded-full'>
-            3
-          </div>
-          <div className='pl-4'>
-            <div className='font-medium text-indigo-500'>February 1, 2023</div>
-            <div className='text-gray-600'>
-              This is the third step update with a brief description of what was
-              added or improved.
-            </div>
-          </div>
+        <div className='flex relative flex-col gap-8'>
+          {steps.map((step, index) => {
+            return (
+              <div key={step.id} className='flex gap-8 mb-8'>
+                <div
+                  key={index}
+                  className='w-12 h-12 bg-indigo-500 text-white flex items-center justify-center rounded-full'
+                >
+                  {step.id}
+                </div>
+                <div className='pl-4'>
+                  <div className='font-medium text-indigo-500'>{step.date}</div>
+                  <div className='text-gray-600'>{step.description}</div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

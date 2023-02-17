@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import LargeFooter from './components/LargeFooter';
 import Profile from './pages/Profile';
+import axios from 'axios';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -28,7 +29,7 @@ function App() {
   // email: email@example.com
   // password: Test1234
 
-  // Check to see if Media-Queries are supported
+  // ! Check to see if Media-Queries are supported
   if (window.matchMedia) {
     // Check if the dark-mode Media-Query matches
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
