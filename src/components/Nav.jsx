@@ -24,6 +24,11 @@ function Nav({ isAuthenticated }) {
     return () => window.removeEventListener('resize', handleResize);
   }, [modalOpen]);
 
+  function handleDisplayProviderData() {
+    if (userIdentities.provider == 'auth0') {
+    }
+  }
+
   return (
     <nav className='flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between min-[100px]:justify-between px-10'>
       <Link to='/' className='py-6 px-6'>

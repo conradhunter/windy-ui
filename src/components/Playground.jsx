@@ -9,7 +9,7 @@ function Playground() {
       <div className='flex h-screen justify-center'>
         <div className='w-screen pl-44'>
           {/* test components here */}
-          <MockUpCode preview={'preview'} jsx={'jsx'} html={'html'} />
+          {/* <MockUpCode preview={'preview'} jsx={'jsx'} html={'html'} /> */}
         </div>
       </div>
     </div>
