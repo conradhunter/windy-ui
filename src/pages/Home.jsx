@@ -16,7 +16,7 @@ function Home() {
           speed={15}
           wrapper={'h2'}
           style={{
-            fontSize: '4em',
+            fontSize: '4rem',
             color: '#4F46E5',
             fontFamily: 'inherit',
             fontWeight: 'bold',

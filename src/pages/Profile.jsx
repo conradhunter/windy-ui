@@ -6,6 +6,7 @@ import DeleteAccountButton from '../components/Buttons/DeleteAccountButton';
 
 function Profile({ setTheme }) {
   // TODO render users information at top of profile page
+
   const profileImage =
     'https://pbs.twimg.com/profile_images/1605762947686375425/lsoGWWty_400x400.jpg';
 
@@ -34,9 +35,9 @@ function Profile({ setTheme }) {
             </div>
             <div className='flex flex-col'>
               <label className='text-gray-500' htmlFor=''>
-                Phone Number:
+                Company:
               </label>
-              <span>250-863-2504</span>
+              <span>WindiKit</span>
             </div>
           </div>
         </div>
