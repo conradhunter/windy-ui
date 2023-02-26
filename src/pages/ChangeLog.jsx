@@ -32,10 +32,7 @@ function ChangeLog() {
 
   return (
     <div>
-      {/* made from 2 seperate components */}
-      {/* first is the steps component that holds a date or number */}
       <Steps />
-      {/* second is the data component that displays the items from the array above */}
     </div>
   );
 }

@@ -4,8 +4,6 @@ import ComponentsGridItem from '../components/ComponentsGridItem';
 import { components, pageComponents } from '../data/componentCategories';
 
 function Components() {
-  // TODO: Create new grid layout for the components to be viewed rather than using the sidebar
-
   return (
     <div className='my-10'>
       <div>
@@ -16,6 +14,7 @@ function Components() {
           {components.map((component, index) => {
             return <ComponentsGridItem key={index} component={component} />;
             // turn components data in array of objects which holds the code && preview of components
+            // TODO: create an improved UI for the components(list, grid, sidebar, etc.)
           })}
         </div>
         {/*another map same as above for the page components data */}

@@ -14,14 +14,14 @@ import ChangeLog from './pages/ChangeLog';
 import Component from './components/Component';
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import LargeFooter from './components/LargeFooter';
 import Profile from './pages/Profile';
 import axios from 'axios';
+import LargeFooter from './components/Footer/LargeFooter';
 
 function App() {
   const { isAuthenticated } = useAuth0();
 
-  const [theme, setTheme] = useState('light'); // TODO handle light and dark mode using this state
+  const [theme, setTheme] = useState('light'); // TODO handle light and dark mode state change
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -29,20 +29,22 @@ function App() {
   // email: email@example.com
   // password: Test1234
 
+  // http://windikit.com/
+
   const [data, setData] = useState();
 
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:5100/api/data')
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //       const { data } = response.data;
-  //       setData(data);
-  //     })
-  //     .catch(function (error) {
-  //       console.error(error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get('http://localhost:5100/api/userData')
+      .then(function (response) {
+        console.log(response.data);
+        const { data } = response.data;
+        setData(data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className='App'>
