@@ -31,7 +31,7 @@ function App() {
 
   // http://windikit.com/
 
-  const [data, setData] = useState();
+  const [dynamicUserData, setDynamicUserData] = useState();
 
   useEffect(() => {
     axios
@@ -39,7 +39,7 @@ function App() {
       .then(function (response) {
         console.log(response.data);
         const { data } = response.data;
-        setData(data);
+        setDynamicUserData(data);
       })
       .catch(function (error) {
         console.error(error);
