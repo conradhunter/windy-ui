@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import UserProfilePreview from './UserProfilePreview';
-import ContactLinkButton from './Buttons/ContactLinkButton';
-import LogOutButton from './Buttons/LogOutButton';
-import SignInButton from './Buttons/SignInButton';
-import { handleNavigatePricing } from '../exportedFunctions';
+import UserProfilePreview from '../UserProfilePreview';
+import ContactLinkButton from '../Buttons/ContactLinkButton';
+import LogOutButton from '../Buttons/LogOutButton';
+import SignInButton from '../Buttons/SignInButton';
+import { handleNavigatePricing } from '../../exportedFunctions';
+import MobileNavMenu from './MobileNavMenu';
 
 function Nav({ isAuthenticated }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -26,6 +26,9 @@ function Nav({ isAuthenticated }) {
 
   function handleDisplayProviderData() {
     if (userIdentities.provider == 'auth0') {
+      return;
+    } else if (userIdentities.provider == 'google-oauth2') {
+      return;
     }
   }
 
@@ -110,44 +113,12 @@ function Nav({ isAuthenticated }) {
           </button>
         </div>
       </div>
-      <div
-        id='mobileNav'
-        className={`w-2/3 h-screen bg-blue-200 absolute right-0 top-0 flex items-center justify-center ${
-          modalOpen ? 'animate-open block' : 'hidden'
-        }`}
-      >
-        <button className='absolute left-8 top-8' onClick={handleToggleModal}>
-          <ArrowForwardIcon fontSize='large' />
-        </button>
-        <div>
-          <ul className='text-center text-xl leading-loose'>
-            <li>
-              <Link to='/'>Components</Link>
-            </li>
-            <li>
-              <Link to='/'>FAQ</Link>
-            </li>
-            <li>
-              <Link to='/'>Blog</Link>
-            </li>
-            <li>
-              <Link to='/'>Change Log</Link>
-            </li>
-            {isAuthenticated ? (
-              <li>
-                <Link to='/'>Sign Out</Link>
-              </li>
-            ) : (
-              <li>
-                <Link to='/'>Sign In</Link>
-              </li>
-            )}
-            <li>
-              <Link to='/'>Contact</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <MobileNavMenu
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        handleToggleModal={handleToggleModal}
+        isAuthenticated={isAuthenticated}
+      />
     </nav>
   );
 }

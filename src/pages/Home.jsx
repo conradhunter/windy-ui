@@ -17,6 +17,7 @@ function Home() {
           wrapper={'h2'}
           style={{
             fontSize: '4rem',
+            // TODO: create conditional statement for fontsize of typeanimation depending on screen size
             color: '#4F46E5',
             fontFamily: 'inherit',
             fontWeight: 'bold',

@@ -25,10 +25,6 @@ html {
   background-image: url('./assets/pattern.svg');
 }
 
-#componentsCustomMargin {
-  margin-left: 16.666666667%;
-}
-
 .animate-open {
   animation: slideInRight 0.5s ease-in;
 }

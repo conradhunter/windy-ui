@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Nav from './components/Nav';
+import Nav from './components/Navigation/Nav';
 import Playground from './components/Playground';
 import Components from './pages/Components';
 import Home from './pages/Home';
@@ -29,21 +29,32 @@ function App() {
   // email: email@example.com
   // password: Test1234
 
-  // http://windikit.com/
+  // * Domain = http://windikit.com/
 
   const [dynamicUserData, setDynamicUserData] = useState();
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5100/api/userData')
-      .then(function (response) {
-        console.log(response.data);
-        const { data } = response.data;
-        setDynamicUserData(data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    const storedUserData = localStorage.getItem('userData');
+    if (storedUserData) {
+      setDynamicUserData(JSON.parse(storedUserData));
+    } else {
+      fetch('http://localhost:5100/api/userData')
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          const userData = data;
+          setDynamicUserData(userData);
+          localStorage.setItem('userData', JSON.stringify(userData));
+        })
+        .catch((error) => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+    }
   }, []);
 
   return (
