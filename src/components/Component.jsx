@@ -9,7 +9,7 @@ import Toggle from './WindyComponents/Toggle';
 function Component() {
   const location = useLocation();
 
-  // TODO: create a reusable component that can wrap differet render methods to give consistent styling for the components view/mock-up code
+  // TODO: create a reusable component that can wrap different render methods to give consistent styling for the components view/mock-up code
   // use <code></code> for correct textstyling || add font to tailwind
 
   // TODO: map over the the group of a component(i.e. buttons) and return the mock-up code under each map item then the next & so on

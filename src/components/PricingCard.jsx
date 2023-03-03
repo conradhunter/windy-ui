@@ -6,7 +6,9 @@ import { scrollToTopOnMount } from '../exportedFunctions';
 function PricingCard({ data }) {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-  function handleChoosePlan() {
+  // TODO: figure out issue with button placement if there is not even amount of list items
+
+  function handleDisplayPricingButton() {
     if (isAuthenticated && !data.paymentLink) {
       return (
         <Link onClick={() => scrollToTopOnMount()} to='/components'>
@@ -21,7 +23,7 @@ function PricingCard({ data }) {
   }
 
   return (
-    <div className='bg-gray-100 p-8 rounded-lg shadow-xl w-80 '>
+    <div className='bg-gray-100 p-8 rounded-lg shadow-xl max-w-xs w-full'>
       <h3 className='text-3xl font-bold text-center text-indigo-600'>
         {data.plan}
       </h3>
@@ -65,7 +67,7 @@ function PricingCard({ data }) {
             !isAuthenticated ? 'cursor-not-allowed' : null
           }`}
         >
-          {handleChoosePlan()}
+          {handleDisplayPricingButton()}
         </button>
       </div>
     </div>

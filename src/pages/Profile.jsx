@@ -64,14 +64,14 @@ function Profile({ setTheme }) {
             </button>
           </div>
           <div className='flex items-center py-2'>
+            <span className='mr-4'>Plan Type:</span>
+            <span className='text-indigo-500'>Business Plan</span>
+          </div>
+          <div className='flex items-center py-2'>
             <span className='mr-4'>Forgot/Change Password:</span>
             <Link className='text-indigo-500 hover:text-indigo-300' to='/'>
               Update your password
             </Link>
-          </div>
-          <div className='flex items-center py-2'>
-            <span className='mr-4'>Plan Type:</span>
-            <span className='text-indigo-500'>Business Plan</span>
           </div>
           <div className='flex items-center py-2'>
             <span className='mr-4'>Update Details:</span>

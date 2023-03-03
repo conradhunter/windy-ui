@@ -21,6 +21,11 @@ function Testimonals() {
         "I've been using this library for my personal projects and I am very impressed with the quality and ease of use.",
       rating: 4,
     },
+    {
+      name: 'Conrad Hunter',
+      review: 'This library is the best thing since sliced bread!',
+      rating: 5,
+    },
   ];
 
   const profileImage =

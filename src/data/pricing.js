@@ -7,6 +7,7 @@ export const basic = {
     'Basic components',
     'Basic support',
     'Basic integrations',
+    ' ',
   ],
 };
 export const business = {
@@ -19,6 +20,7 @@ export const business = {
     'All components',
     'Priority support',
     'Lifetime updates & access',
+    'Components with JavaScript Logic',
   ],
   paymentLink: 'https://buy.stripe.com/14k02R46G5NL3XqbIM',
 };
@@ -32,6 +34,7 @@ export const enterprise = {
     'All components',
     'Priority support',
     'Lifetime updates & access',
+    'Components with JavaScript Logic',
   ],
   paymentLink: 'https://buy.stripe.com/bIY5nbbz8dgdgKcaEH',
 };

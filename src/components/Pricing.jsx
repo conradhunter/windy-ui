@@ -9,7 +9,7 @@ function Pricing() {
         <h2 className='mb-20 text-3xl md:text-4xl font-bold text-indigo-600 text-center leading-tight md:max-w-xl mx-auto'>
           Choose a plan that suits you. Fast and stylish UI components.
         </h2>
-        <div className='mb-24 mx-auto flex flex-wrap gap-10 justify-center'>
+        <div className='mb-24 mx-auto flex gap-10 justify-center md-flex-col'>
           <PricingCard data={basic} />
           <PricingCard data={business} />
           <PricingCard data={enterprise} />
