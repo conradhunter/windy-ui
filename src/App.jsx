@@ -19,7 +19,7 @@ import axios from 'axios';
 import LargeFooter from './components/Footer/LargeFooter';
 
 function App() {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
 
   const [theme, setTheme] = useState('light'); // TODO handle light and dark mode state change
   const [error, setError] = useState(null);
@@ -57,9 +57,11 @@ function App() {
     }
   }, []);
 
+  console.log(dynamicUserData);
+
   return (
     <div className='App'>
-      <Nav isAuthenticated={isAuthenticated} />
+      <Nav isAuthenticated={isAuthenticated} user={user} />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/components' element={<Components />} />

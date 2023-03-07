@@ -1,5 +1,4 @@
 import React from 'react';
-import MockUpCode from './MockUpCode';
 
 function Playground() {
   return (

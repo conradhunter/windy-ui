@@ -7,7 +7,7 @@ import SignInButton from '../Buttons/SignInButton';
 import { handleNavigatePricing } from '../../exportedFunctions';
 import MobileNavMenu from './MobileNavMenu';
 
-function Nav({ isAuthenticated }) {
+function Nav({ isAuthenticated, user }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleToggleModal = () => {
@@ -118,6 +118,7 @@ function Nav({ isAuthenticated }) {
         setModalOpen={setModalOpen}
         handleToggleModal={handleToggleModal}
         isAuthenticated={isAuthenticated}
+        user={user}
       />
     </nav>
   );

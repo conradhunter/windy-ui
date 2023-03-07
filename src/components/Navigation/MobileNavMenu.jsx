@@ -19,6 +19,7 @@ function MobileNavMenu({
   isAuthenticated,
   setModalOpen,
   dynamicUserData,
+  user,
 }) {
   // TODO: disable scroll on app if modal is open
   // TODO: close modal if open after user clicks one of the links
@@ -40,6 +41,7 @@ function MobileNavMenu({
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
         dynamicUserData={dynamicUserData}
+        user={user}
       />
       <button
         className='absolute left-8 top-8 p-1 rounded-full text-white bg-indigo-500'

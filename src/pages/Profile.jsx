@@ -3,12 +3,12 @@ import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DeleteAccountButton from '../components/Buttons/DeleteAccountButton';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function Profile({ setTheme }) {
   // TODO render users information at top of profile page
 
-  const profileImage =
-    'https://pbs.twimg.com/profile_images/1605762947686375425/lsoGWWty_400x400.jpg';
+  const { user } = useAuth0();
 
   return (
     <div className='flex flex-col justify-center items-center my-12 gap-8'>
@@ -18,20 +18,20 @@ function Profile({ setTheme }) {
         </h1>
         <div className='w-full flex justify-center items-center'>
           <div className='mr-16'>
-            <img src={profileImage} className='w-16 h-16 rounded-full' alt='' />
+            <img src={user.picture} className='w-16 h-16 rounded-full' alt='' />
           </div>
           <div className='flex items-center gap-12'>
             <div className='flex flex-col'>
               <label className='text-gray-500' htmlFor=''>
                 Name:
               </label>
-              <span>Conrad Hunter</span>
+              <span>{user.nickname}</span>
             </div>
             <div className='flex flex-col'>
               <label className='text-gray-500' htmlFor=''>
                 Email:
               </label>
-              <span>conrad@conradhunterdev.com</span>
+              <span>{user.email}</span>
             </div>
             <div className='flex flex-col'>
               <label className='text-gray-500' htmlFor=''>
