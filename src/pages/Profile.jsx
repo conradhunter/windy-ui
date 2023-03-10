@@ -11,8 +11,8 @@ function Profile({ setTheme }) {
   const { user } = useAuth0();
 
   return (
-    <div className='flex flex-col justify-center items-center my-12 gap-8'>
-      <section className='w-7/12 border border-gray-300 rounded-xl p-10'>
+    <div className='flex flex-col justify-center items-center my-12 gap-8 w-full'>
+      <section className='border border-gray-300 rounded-xl p-10 max-w-[60%] w-full'>
         <h1 className='text-center text-2xl text-indigo-500 font-semibold mb-10'>
           Hi Conrad!
         </h1>
@@ -43,7 +43,7 @@ function Profile({ setTheme }) {
         </div>
       </section>
 
-      <section className='w-7/12 border border-gray-300 rounded-xl p-10'>
+      <section className='border border-gray-300 rounded-xl p-10 max-w-[60%] w-full'>
         <h1 className='text-center text-2xl text-indigo-500 font-semibold mb-10'>
           Settings
         </h1>

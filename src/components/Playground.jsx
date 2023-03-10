@@ -1,4 +1,5 @@
 import React from 'react';
+import FAQAccordion from './WindyComponents/Accordion/FAQAccordion';
 
 function Playground() {
   return (
@@ -9,6 +10,7 @@ function Playground() {
         <div className='w-screen pl-44'>
           {/* test components here */}
           {/* <MockUpCode preview={'preview'} jsx={'jsx'} html={'html'} /> */}
+          <FAQAccordion />
         </div>
       </div>
     </div>

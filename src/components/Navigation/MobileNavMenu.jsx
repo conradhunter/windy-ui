@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import MobileNavProfilePreview from './MobileNavProfilePreview';
 import {
+  AttachMoneyOutlined,
   ChangeCircleOutlined,
   ContactPageOutlined,
   HomeOutlined,
@@ -19,7 +20,6 @@ function MobileNavMenu({
   isAuthenticated,
   setModalOpen,
   dynamicUserData,
-  user,
 }) {
   // TODO: disable scroll on app if modal is open
   // TODO: close modal if open after user clicks one of the links
@@ -33,7 +33,7 @@ function MobileNavMenu({
   return (
     <div
       id='mobileNav'
-      className={`w-2/3 h-screen max-w-sm bg-blue-100 absolute right-0 top-0 flex flex-col items-center rounded-l-lg pt-32 ${
+      className={`w-2/3 h-screen max-w-sm bg-blue-100 absolute right-0 top-0 flex shadow-2xl flex-col items-center rounded-l-lg pt-32 ${
         modalOpen ? 'animate-open block' : 'hidden'
       }`}
     >
@@ -41,7 +41,6 @@ function MobileNavMenu({
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
         dynamicUserData={dynamicUserData}
-        user={user}
       />
       <button
         className='absolute left-8 top-8 p-1 rounded-full text-white bg-indigo-500'
@@ -64,6 +63,11 @@ function MobileNavMenu({
           <li className='bg-blue-100 flex items-center mb-4 py-1 px-2 hover:bg-blue-200 duration-200 rounded-md'>
             <Link onClick={handleModalOnRouteChange} to='/faq'>
               <QuestionAnswerOutlined className='mr-3' /> FAQ
+            </Link>
+          </li>
+          <li className='bg-blue-100 flex items-center mb-4 py-1 px-2 hover:bg-blue-200 duration-200 rounded-md'>
+            <Link onClick={handleModalOnRouteChange} to='/change-log'>
+              <AttachMoneyOutlined className='mr-3' /> Pricing
             </Link>
           </li>
           <li className='bg-blue-100 flex items-center mb-4 py-1 px-2 hover:bg-blue-200 duration-200 rounded-md'>

@@ -12,21 +12,21 @@ function Contact() {
         <h3 className='mb-8 text-3xl font-bold text-indigo-500'>Contact Us</h3>
         <form>
           <input
-            className='w-full outline-none py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg'
+            className='w-full outline-none py-3 pl-3 mb-4 bg-white rounded-lg'
             type='text'
             autoComplete=''
             placeholder='Full Name'
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            className='w-full outline-none py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg'
+            className='w-full outline-none py-3 pl-3 mb-4 bg-white rounded-lg'
             type='email'
             autoComplete='email'
             placeholder='E-mail address'
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className='w-full outline-none py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg'
+            className='w-full outline-none py-3 pl-3 mb-4 bg-white rounded-lg'
             type='text'
             autoComplete=''
             placeholder='Company Name'
@@ -37,7 +37,7 @@ function Contact() {
             cols='30'
             rows='5'
             placeholder='Your message...'
-            className='w-full outline-none py-3 pl-3 mb-4 bg-white border border-gray-400 rounded-lg min-h-[10rem]'
+            className='w-full outline-none py-3 pl-3 mb-4 bg-white rounded-lg min-h-[10rem]'
             onChange={(e) => setMessage(e.target.value)}
           />
           <button

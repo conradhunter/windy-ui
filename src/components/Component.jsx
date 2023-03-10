@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Accordion from '../components/WindyComponents/Accordion';
 import MockUpCode from './MockUpCode';
+import Accordion from './WindyComponents/Accordion/Accordion';
 import ButtonOne from './WindyComponents/Buttons/ButtonOne';
 import Tabs from './WindyComponents/Tabs';
 import Toggle from './WindyComponents/Toggle';

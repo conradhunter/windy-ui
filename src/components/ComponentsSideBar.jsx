@@ -3,22 +3,21 @@ import { Link } from 'react-router-dom';
 import { components, pageComponents } from '../data/componentCategories';
 
 function ComponentsSideBar() {
-  function removeSpaces() {
-    components.map((component) => {
-      let replacedComponents = component
-        .split(' ')
-        .join('')
-        .toLocaleLowerCase()
-        .replace('/', '-');
-    });
-    pageComponents.map((component) => {
-      let replacedPageComponents = component
-        .split(' ')
-        .join('')
-        .toLocaleLowerCase();
-      console.log(replacedPageComponents);
-    });
-  }
+  // function removeSpaces() {
+  //   components.map((component) => {
+  //     let replacedComponents = component
+  //       .split(' ')
+  //       .join('')
+  //       .toLocaleLowerCase()
+  //       .replace('/', '-');
+  //   });
+  //   pageComponents.map((component) => {
+  //     let replacedPageComponents = component
+  //       .split(' ')
+  //       .join('')
+  //       .toLocaleLowerCase();
+  //   });
+  // }
 
   return (
     <aside

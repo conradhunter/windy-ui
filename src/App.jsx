@@ -15,11 +15,10 @@ import Component from './components/Component';
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from './pages/Profile';
-import axios from 'axios';
 import LargeFooter from './components/Footer/LargeFooter';
 
 function App() {
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   const [theme, setTheme] = useState('light'); // TODO handle light and dark mode state change
   const [error, setError] = useState(null);
@@ -33,35 +32,33 @@ function App() {
 
   const [dynamicUserData, setDynamicUserData] = useState();
 
-  useEffect(() => {
-    const storedUserData = localStorage.getItem('userData');
-    if (storedUserData) {
-      setDynamicUserData(JSON.parse(storedUserData));
-    } else {
-      fetch('http://localhost:5100/api/userData')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-          const userData = data;
-          setDynamicUserData(userData);
-          localStorage.setItem('userData', JSON.stringify(userData));
-        })
-        .catch((error) => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-  }, []);
-
-  console.log(dynamicUserData);
+  // useEffect(() => {
+  //   const storedUserData = localStorage.getItem('userData');
+  //   if (storedUserData) {
+  //     setDynamicUserData(JSON.parse(storedUserData));
+  //   } else {
+  //     fetch('http://localhost:5100/api/userData')
+  //       .then((response) => {
+  //         if (!response.ok) {
+  //           throw new Error('Network response was not ok');
+  //         }
+  //         return response.json();
+  //       })
+  //       .then((data) => {
+  //         console.log(data);
+  //         const userData = data;
+  //         setDynamicUserData(userData);
+  //         localStorage.setItem('userData', JSON.stringify(userData));
+  //       })
+  //       .catch((error) => {
+  //         console.error('There was a problem with the fetch operation:', error);
+  //       });
+  //   }
+  // }, []);
 
   return (
     <div className='App'>
-      <Nav isAuthenticated={isAuthenticated} user={user} />
+      <Nav isAuthenticated={isAuthenticated} />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/components' element={<Components />} />

@@ -6,12 +6,12 @@ import MailingList from './MailingList';
 function LargeFooter() {
   return (
     <footer className='bg-blue-100 flex py-12'>
-      <div className='container mx-auto px-4'>
-        <div className='flex'>
+      <div className='mx-auto max-w-[80%] w-full'>
+        <div className='flex max-[850px]:flex-wrap'>
           <div className='w-full md:w-1/4 text-center md:text-left'>
-            <h4 className='mb-4 text-lg text-black font-medium'>Links</h4>
+            <h4 className='mb-4 text-md text-black font-medium'>Navigation</h4>
             <ul className=''>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link
                   className='text-indigo-500 hover:text-indigo-300'
                   to='/components'
@@ -19,7 +19,7 @@ function LargeFooter() {
                   Components
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link
                   className='text-indigo-500 hover:text-indigo-300'
                   to='/faq'
@@ -27,7 +27,7 @@ function LargeFooter() {
                   FAQ
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link
                   onClick={handleNavigatePricing}
                   className='text-indigo-500 hover:text-indigo-300'
@@ -36,7 +36,7 @@ function LargeFooter() {
                   Pricing
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link
                   className='text-indigo-500 hover:text-indigo-300'
                   to='/change-log'
@@ -44,7 +44,7 @@ function LargeFooter() {
                   Change Log
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Contact
                 </Link>
@@ -52,21 +52,21 @@ function LargeFooter() {
             </ul>
           </div>
           <div className='w-full md:w-1/4 text-center md:text-left'>
-            <h4 className='mb-4 text-lg text-black font-medium'>
+            <h4 className='mb-4 text-md text-black font-medium'>
               Connect With Us
             </h4>
             <ul className=''>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   GitHub
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Twitter
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   LinkedIn
                 </Link>
@@ -74,9 +74,9 @@ function LargeFooter() {
             </ul>
           </div>
           <div className='w-full md:w-1/4 text-center md:text-left'>
-            <h4 className='mb-4 text-lg text-black font-medium'>Legal</h4>
+            <h4 className='mb-4 text-md text-black font-medium'>Legal</h4>
             <ul className=''>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link
                   className='text-indigo-500 hover:text-indigo-300'
                   to='/terms-of-service'
@@ -84,12 +84,12 @@ function LargeFooter() {
                   Terms of Service
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Privacy Policy
                 </Link>
               </li>
-              <li className='mb-4'>
+              <li className='mb-4 text-sm md:text-base'>
                 <Link className='text-indigo-500 hover:text-indigo-300' to='#'>
                   Cookies Policy
                 </Link>

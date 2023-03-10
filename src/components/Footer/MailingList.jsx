@@ -1,7 +1,6 @@
 import { addDoc, collection } from 'firebase/firestore';
 import React, { useRef, useState } from 'react';
-import { db } from '../../backend/firebase/FirebaseConfiguration';
-
+import { db } from '../../../Backend/firebase/FirebaseConfiguration';
 function MailingList() {
   const mailingListCollection = collection(db, 'mailing-list-users');
   const [email, setEmail] = useState('');
@@ -14,8 +13,10 @@ function MailingList() {
     mailingListInputRef.current.value = '';
   };
 
+  //max-[900px]:hidden
+
   return (
-    <div className='text-center'>
+    <div className='text-center flex flex-col mx-auto'>
       <h3 className='text-lg font-bold mb-2'>Subscribe to our newsletter</h3>
       <p className='text-sm mb-4'>
         Get the latest updates and news from WindiKit
@@ -26,7 +27,7 @@ function MailingList() {
           onChange={(e) => setEmail(e.target.value)}
           ref={mailingListInputRef}
           placeholder='Enter your email address'
-          className='w-full p-2 rounded-lg text-sm outline-none'
+          className='w-full p-2 rounded-lg text-xs outline-none'
         />
         <button
           onClick={handleSubscribe}

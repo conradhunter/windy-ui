@@ -6,8 +6,9 @@ import LogOutButton from '../Buttons/LogOutButton';
 import SignInButton from '../Buttons/SignInButton';
 import { handleNavigatePricing } from '../../exportedFunctions';
 import MobileNavMenu from './MobileNavMenu';
+import { useAuth0 } from '@auth0/auth0-react';
 
-function Nav({ isAuthenticated, user }) {
+function Nav({ isAuthenticated }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleToggleModal = () => {
@@ -24,13 +25,7 @@ function Nav({ isAuthenticated, user }) {
     return () => window.removeEventListener('resize', handleResize);
   }, [modalOpen]);
 
-  function handleDisplayProviderData() {
-    if (userIdentities.provider == 'auth0') {
-      return;
-    } else if (userIdentities.provider == 'google-oauth2') {
-      return;
-    }
-  }
+  const { loginWithRedirect } = useAuth0();
 
   return (
     <nav className='flex items-center justify-evenly w-full bg-gray-800 h-20 navbar sm:justify-between min-[100px]:justify-between px-10'>
@@ -118,7 +113,6 @@ function Nav({ isAuthenticated, user }) {
         setModalOpen={setModalOpen}
         handleToggleModal={handleToggleModal}
         isAuthenticated={isAuthenticated}
-        user={user}
       />
     </nav>
   );

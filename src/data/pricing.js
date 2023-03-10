@@ -7,9 +7,10 @@ export const basic = {
     'Basic components',
     'Basic support',
     'Basic integrations',
-    ' ',
+    'No JavaScript Logic',
   ],
 };
+
 export const business = {
   plan: 'Business',
   price: 499,
@@ -24,6 +25,7 @@ export const business = {
   ],
   paymentLink: 'https://buy.stripe.com/14k02R46G5NL3XqbIM',
 };
+
 export const enterprise = {
   plan: 'Enterprise',
   price: 649,
